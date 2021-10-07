@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using FrutosElqui.Mvc.Models.UsuarioApp;
 
 namespace FrutosElqui.Mvc.Data
 {
@@ -12,5 +10,7 @@ namespace FrutosElqui.Mvc.Data
             : base(options)
         {
         }
+
+        public DbSet<AppUser> Usuarios { get; set; }
     }
 }
