@@ -5,5 +5,10 @@
 
 @section Scripts{
     <partial name="_ValidationScriptsPartial"/>
+    <script type="text/javascript"> 
+        function Test() {
+            var result = @Url.Action("ListaBanco","Bancos");
+        }
+    </script>
     
 }
