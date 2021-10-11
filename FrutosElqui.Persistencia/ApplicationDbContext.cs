@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using FrutosElqui.Core.Misc;
+using FrutosElqui.Core.Usuarios;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using FrutosElqui.Mvc.Models.UsuarioApp;
 
-namespace FrutosElqui.Mvc.Data
+namespace FrutosElqui.Persistencia
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -12,5 +13,6 @@ namespace FrutosElqui.Mvc.Data
         }
 
         public DbSet<AppUser> Usuarios { get; set; }
+        public DbSet<Banco> Bancos { get; set; }
     }
 }

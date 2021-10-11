@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrutosElqui.Mvc", "FrutosElqui.Mvc\FrutosElqui.Mvc.csproj", "{FDA331F3-4136-4A31-A8CE-4FD863E53C3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrutosElqui.Mvc", "FrutosElqui.Mvc\FrutosElqui.Mvc.csproj", "{FDA331F3-4136-4A31-A8CE-4FD863E53C3B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrutosElqui.Core", "FrutosElqui.Core\FrutosElqui.Core.csproj", "{E7169084-5C77-4C84-9D76-EC4F02A6EE97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrutosElqui.Negocio", "FrutosElqui.Negocio\FrutosElqui.Negocio.csproj", "{BAB53125-B4A3-4C33-B0E5-68C8A69AFE0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrutosElqui.Persistencia", "FrutosElqui.Persistencia\FrutosElqui.Persistencia.csproj", "{19A23D95-067D-49AA-B761-AA619A6C73E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{FDA331F3-4136-4A31-A8CE-4FD863E53C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDA331F3-4136-4A31-A8CE-4FD863E53C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDA331F3-4136-4A31-A8CE-4FD863E53C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7169084-5C77-4C84-9D76-EC4F02A6EE97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7169084-5C77-4C84-9D76-EC4F02A6EE97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7169084-5C77-4C84-9D76-EC4F02A6EE97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7169084-5C77-4C84-9D76-EC4F02A6EE97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB53125-B4A3-4C33-B0E5-68C8A69AFE0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB53125-B4A3-4C33-B0E5-68C8A69AFE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB53125-B4A3-4C33-B0E5-68C8A69AFE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB53125-B4A3-4C33-B0E5-68C8A69AFE0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19A23D95-067D-49AA-B761-AA619A6C73E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19A23D95-067D-49AA-B761-AA619A6C73E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19A23D95-067D-49AA-B761-AA619A6C73E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19A23D95-067D-49AA-B761-AA619A6C73E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

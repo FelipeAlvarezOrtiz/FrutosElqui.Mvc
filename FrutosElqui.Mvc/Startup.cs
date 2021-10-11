@@ -1,5 +1,5 @@
-using FrutosElqui.Mvc.Data;
-using FrutosElqui.Mvc.Models.UsuarioApp;
+using FrutosElqui.Core.Usuarios;
+using FrutosElqui.Persistencia;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
