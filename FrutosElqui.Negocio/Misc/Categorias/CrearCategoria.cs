@@ -7,13 +7,13 @@ using FrutosElqui.Persistencia;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace FrutosElqui.Negocio.Misc.Bancos
+namespace FrutosElqui.Negocio.Misc.Categorias
 {
-    public class CrearBanco
+    public class CrearCategoria
     {
         public class Command : IRequest
         {
-            public string NombreBanco { get; set; }
+            public string NombreCategoria { get; set; }
         }
     
         public class Handler : IRequestHandler<Command>
@@ -27,16 +27,16 @@ namespace FrutosElqui.Negocio.Misc.Bancos
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                if (await _context.Bancos.Where(banco => banco.NombreBanco.Equals(request.NombreBanco))
-                    .FirstOrDefaultAsync(cancellationToken) is not null)
-                    throw new Exception("Ese banco ya existe.");
-                await _context.Bancos.AddAsync(new Banco()
+                if (await _context.Categorias
+                    .Where(categoria => categoria.NombreCategoria.Equals(request.NombreCategoria))
+                    .FirstOrDefaultAsync() is not null) throw new Exception("Esa categoría ya existe.");
+                await _context.Categorias.AddAsync(new Categoria()
                 {
-                    NombreBanco = request.NombreBanco
-                }, cancellationToken);
-                return await _context.SaveChangesAsync(cancellationToken) > 0
+                    NombreCategoria = request.NombreCategoria
+                });
+                return await _context.SaveChangesAsync() > 0
                     ? Unit.Value 
-                    : throw new Exception("Problema al guardar el banco");
+                    : throw new Exception("Problema al guardar la categoria");
             }
         }
     }
