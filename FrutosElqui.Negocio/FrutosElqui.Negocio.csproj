@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FrutosElqui.Core\FrutosElqui.Core.csproj" />
+    <ProjectReference Include="..\FrutosElqui.Persistencia\FrutosElqui.Persistencia.csproj" />
   </ItemGroup>
 
 </Project>

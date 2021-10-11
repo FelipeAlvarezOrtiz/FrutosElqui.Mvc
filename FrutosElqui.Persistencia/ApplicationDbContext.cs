@@ -14,5 +14,6 @@ namespace FrutosElqui.Persistencia
 
         public DbSet<AppUser> Usuarios { get; set; }
         public DbSet<Banco> Bancos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
     }
 }
