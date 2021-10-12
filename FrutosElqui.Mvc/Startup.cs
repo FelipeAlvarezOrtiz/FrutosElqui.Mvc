@@ -1,5 +1,7 @@
 using FrutosElqui.Core.Usuarios;
+using FrutosElqui.Negocio.Misc.Bancos;
 using FrutosElqui.Persistencia;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -23,7 +25,10 @@ namespace FrutosElqui.Mvc
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("Dev")));
+                    Configuration.GetConnectionString("Dev"),optionsBuilders =>
+                    {
+                        optionsBuilders.MigrationsAssembly("FrutosElqui.Persistencia");
+                    }));
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddDefaultIdentity<AppUser>(options => {
                     options.SignIn.RequireConfirmedAccount = false;
@@ -33,6 +38,7 @@ namespace FrutosElqui.Mvc
                     options.Lockout.MaxFailedAccessAttempts = 5;
                 }).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddMediatR(typeof(ListaDeBancos.Handler));
             services.AddControllersWithViews();
         }
         

@@ -24,7 +24,7 @@ namespace FrutosElqui.Mvc.ApiControllers
             return await Mediator.Send(request);
         }
 
-        [HttpPost,Authorize(Roles = "Administrador")]
+        [HttpPut,Authorize(Roles = "Administrador")]
         public async Task<ActionResult<Unit>> ActualizarBanco(ActualizarBanco.Command request)
         {
             return await Mediator.Send(request);
