@@ -6,7 +6,7 @@ namespace FrutosElqui.Mvc.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class BaseController : ControllerBase
+    public class BaseController : Controller
     {
         private IMediator _mediator;
         protected IMediator Mediator => _mediator ?? (_mediator =

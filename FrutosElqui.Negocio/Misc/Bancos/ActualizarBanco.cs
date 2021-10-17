@@ -8,7 +8,7 @@ namespace FrutosElqui.Negocio.Misc.Bancos
 {
     public class ActualizarBanco
     {
-        public class Command : IRequest
+        public record Command : IRequest
         {
             public int IdBanco { get; set; }
             public string NombreBanco { get; set; }

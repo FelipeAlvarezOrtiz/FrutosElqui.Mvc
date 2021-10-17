@@ -2,13 +2,20 @@
     ViewData["Title"] = "Home Page";
 }
 
-
 @section Scripts{
     <partial name="_ValidationScriptsPartial"/>
-    <script type="text/javascript"> 
-        function Test() {
-            var result = @Url.Action("ListaBanco","Bancos");
+    <script type="text/javascript">
+        function Cargar() {
+            $.ajax({
+                url: '@Url.Action("RegistrarInit","Usuarios")',
+                type: 'POST',
+                async: true,
+                success : function() {
+                    alert('correcto');
+                },error : function() {
+                    alert('error');
+                }
+            });
         }
     </script>
-    
 }

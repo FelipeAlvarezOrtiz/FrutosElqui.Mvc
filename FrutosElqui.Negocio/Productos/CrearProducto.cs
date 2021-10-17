@@ -4,7 +4,7 @@ namespace FrutosElqui.Negocio.Productos
 {
     public class CrearProducto
     {
-        public class Command : IRequest
+        public record Command : IRequest
         {
             public string NombreProducto { get; set; }
             public string DescripcionProducto { get; set; }
@@ -17,6 +17,8 @@ namespace FrutosElqui.Negocio.Productos
 
             public int Proveedor { get; set; }
         }
+
+
         
     }
 }

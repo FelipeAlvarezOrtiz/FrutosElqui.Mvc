@@ -28,6 +28,7 @@ namespace FrutosElqui.Mvc
                     Configuration.GetConnectionString("Dev"),optionsBuilders =>
                     {
                         optionsBuilders.MigrationsAssembly("FrutosElqui.Persistencia");
+                        optionsBuilders.EnableRetryOnFailure(10);
                     }));
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddDefaultIdentity<AppUser>(options => {
@@ -36,8 +37,7 @@ namespace FrutosElqui.Mvc
                     options.Password.RequiredLength = 8;
                     options.Password.RequireNonAlphanumeric = false;
                     options.Lockout.MaxFailedAccessAttempts = 5;
-                }).AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                }).AddRoles<IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddMediatR(typeof(ListaDeBancos.Handler));
             services.AddControllersWithViews();
         }

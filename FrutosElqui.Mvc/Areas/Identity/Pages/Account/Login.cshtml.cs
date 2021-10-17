@@ -41,14 +41,16 @@ namespace FrutosElqui.Mvc.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
+            [Display(Name = "Nombre de usuario")]
             [EmailAddress]
             public string Email { get; set; }
 
             [Required]
+            [Display(Name = "Contraseña")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "¿Recordar la cuenta?")]
             public bool RememberMe { get; set; }
         }
 
@@ -77,8 +79,6 @@ namespace FrutosElqui.Mvc.Areas.Identity.Pages.Account
         
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {

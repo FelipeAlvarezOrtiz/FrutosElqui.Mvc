@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using FrutosElqui.Core.Productos
+@using FrutosElqui.Core.Usuarios
+
+@inject SignInManager<AppUser> _signInManager
+@inject UserManager<AppUser> _userManager
+@inject RoleManager<IdentityRole> _roleManager
+
+@{
+    var Producto = ViewData["Producto"] as Producto;
+}
+<br/> 
+<hr/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial"/>
+    <script type="text/javascript">
+        
+    </script>
+}
