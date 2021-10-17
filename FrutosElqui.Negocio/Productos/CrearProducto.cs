@@ -1,4 +1,8 @@
-﻿using MediatR;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using FrutosElqui.Persistencia;
+using MediatR;
 
 namespace FrutosElqui.Negocio.Productos
 {
@@ -18,7 +22,22 @@ namespace FrutosElqui.Negocio.Productos
             public int Proveedor { get; set; }
         }
 
+        public class Handler : IRequestHandler<Command>
+        {
+            private readonly ApplicationDbContext _context;
 
-        
+            public Handler(ApplicationDbContext context)
+            {
+                _context = context;
+            }
+
+            public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+            {
+                return await _context.SaveChangesAsync(cancellationToken) > 0
+                    ? Unit.Value
+                    : throw new Exception("Problema al guardar el producto");
+            }
+        }
+
     }
 }

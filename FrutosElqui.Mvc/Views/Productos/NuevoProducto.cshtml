@@ -1,0 +1,231 @@
+﻿@using FrutosElqui.Core.Misc
+@using FrutosElqui.Core.Proveedores
+@{
+    var sabores = ViewData["Sabores"] as List<Sabor>;
+    var categorias = ViewData["Categorias"] as List<Categoria>;
+    var medidas = ViewData["Medidas"] as List<Medida>;
+    var proveedores = ViewData["Proveedores"] as List<Proveedor>;
+}
+<div class="container-fluid">
+    <div class="row form-group">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="nombreProducto" class="col-form-label">Nombre del producto</label>
+                <input type="text" class="form-control" id="nombreProducto" required maxlength="100" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="form-group">
+                <label for="descripcionProducto" class="col-form-label">Descripción de producto</label>
+                <input type="text" class="form-control" id="descripcionProducto" required maxlength="100" />
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="form-group">
+                <label for="precioMayorista" class="col-form-label">Precio Mayorista</label>
+                <input type="number" class="form-control" id="precioMayorista" value="0" required maxlength="100" />
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="form-group">
+                <label for="precioTotal" class="col-form-label">Precio total</label>
+                <input type="number" class="form-control" id="precioTotal" required min="0"/>
+            </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="form-group">
+                <label for="saborSelected" class="col-form-label">Sabor</label>
+                <div class="input-group">
+                    <select class="form-control" id="saborSelected">
+                        <option value="0">-- Escoge sabor --</option>
+                        @foreach (var sabor in sabores)
+                        {
+                            <option value="@sabor.IdSabor">@sabor.NombreSabor</option>
+                        }
+                    </select>&nbsp;
+                    <button class="btn btn-outline-success" id="botonNuevoSabor" onclick="$('#modalNuevoSabor').modal('show')"><i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="form-group">
+                <label for="categoriaSelected" class="col-form-label">Categoría</label>
+                <div class="input-group">
+                    <select class="form-control" id="categoriaSelected">
+                        <option value="0">-- Escoge categoria --</option>
+                        @foreach (var categoria in categorias)
+                        {
+                            <option value="@categoria.IdCategoria">@categoria.NombreCategoria</option>
+                        }
+                    </select>&nbsp;
+                    <button class="btn btn-outline-success" id="botonNuevaCategoria" onclick="$('#modalNuevaCategoria').modal('show')"><i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="form-group">
+                <label for="medidaSelected" class="col-form-label">Medida</label>
+                <div class="input-group">
+                    <select class="form-control" id="medidaSelected">
+                        <option value="0">-- Escoge medida --</option>
+                        @foreach (var medida in medidas)
+                        {
+                            <option value="@medida.IdMedida">@medida.NombreMedida</option>
+                        }
+                    </select>&nbsp;
+                    <button class="btn btn-outline-success" id="botonNuevaMedida" onclick="$('#modalNuevaMedida').modal('show')"><i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="form-group">
+                <label for="proveedorSelected" class="col-form-label">Proveedor</label>
+                <div class="input-group">
+                    <select class="form-control" id="proveedorSelected">
+                        <option value="0">-- Escoge proveedor --</option>
+                        @foreach (var proveedor in proveedores)
+                        {
+                            <option value="@proveedor.IdProveedor">@proveedor.NombreProveedor - @proveedor.RutProveedor</option>
+                        }
+                    </select>&nbsp;
+                    <a class="btn btn-outline-success" id="botonNuevaMedida" asp-controller="Proveedores" asp-action="NuevoProveedor"><i class="fas fa-plus-circle"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row text-center">
+        <div class="col-sm-12 col-md-12 col-lg-6 mb-2">
+            <a class="btn btn-info" asp-controller="Productos" asp-action="Index"><i class="fas fa-arrow-left"></i>&nbsp;Volver atrás</a>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6 mb-2">
+            <button class="btn btn-success"><i class="far fa-plus-square"></i>&nbsp;Agregar nuevo producto</button>
+        </div>
+    </div>
+</div>
+
+<!--Modal sabor-->
+<div class="modal fade" id="modalNuevoSabor" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo sabor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-form-label" for="nuevoNombreSabor">Nombre del nuevo sabor</label>
+                                <input class="form-control" type="text" id="nuevoNombreSabor" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="CrearSabor()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal categoria-->
+<div class="modal fade" id="modalNuevaCategoria" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nueva categoria</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-form-label" for="nuevoNombreCategoria">Nombre de la nueva categoría</label>
+                                <input class="form-control" type="text" id="nuevoNombreCategoria" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="CrearCategoria()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal medida-->
+<div class="modal fade" id="modalNuevaMedida" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nueva medida</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-form-label" for="nuevoNombreMedida">Nombre de la nueva medida</label>
+                                <input class="form-control" type="text" id="nuevoNombreMedida" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="CrearMedida()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+    <script type="text/javascript">
+        function CrearSabor() {
+
+        }
+
+        function RefrescarSabores() {
+
+        }
+
+        function CrearCategoria() {
+
+        }
+
+        function RefrescarCategorias() {
+
+        }
+
+        function CrearMedida() {
+
+        }
+
+        function RefrescarMedidas() {
+
+        }
+    </script>
+}

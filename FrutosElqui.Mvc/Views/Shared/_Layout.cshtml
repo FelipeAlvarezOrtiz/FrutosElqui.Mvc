@@ -12,35 +12,34 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-md navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Frutos de Elqui</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="navbar-collapse collapse d-md-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i>&nbsp;Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Bancos" asp-action="Index">Productos</a>
+                            <a class="nav-link text-dark" asp-controller="Productos" asp-action="Index"><i class="fas fa-boxes"></i>&nbsp;Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Bancos" asp-action="Index">Miscelaneos</a>
+                            <a class="nav-link text-dark" asp-controller="Bancos" asp-action="Index"><i class="fas fa-clipboard-list"></i>&nbsp;Miscelaneos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Bancos" asp-action="Index">Ventas</a>
+                            <a class="nav-link text-dark" asp-controller="Bancos" asp-action="Index"><i class="fas fa-file-invoice-dollar"></i>&nbsp;Ventas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Proveedores" asp-action="Index">Proveedores</a>
+                            <a class="nav-link text-dark" asp-controller="Proveedores" asp-action="Index"><i class="fas fa-user-tie"></i>&nbsp;Proveedores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Bancos" asp-action="Index">Clientes</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Bancos" asp-action="Index"><i class="fas fa-user-circle"></i>&nbsp;Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Bancos" asp-action="Index">Cotizaciones</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Bancos" asp-action="Index"><i class="fas fa-file-invoice"></i>&nbsp;Cotizaciones</a>
                         </li>
                     </ul>
                 </div>
@@ -58,8 +57,15 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - Frutos de Elqui
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-between">
+                <div class="col-6">
+                    <a>&copy; 2021 - Frutos de Elqui</a>
+                </div>
+                <div class="col-6">
+                    <a class="nav-link text-dark" href="mailto:me@felipealvarez.dev"><i class="fas fa-bug"></i>&nbsp;Reportar un error</a>
+                </div>
+            </div>
         </div>
     </footer>
 

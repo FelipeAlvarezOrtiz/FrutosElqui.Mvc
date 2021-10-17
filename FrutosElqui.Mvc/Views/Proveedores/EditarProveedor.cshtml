@@ -1,6 +1,6 @@
 ﻿@using FrutosElqui.Core.Proveedores
 @{
-    var Proveedor = ViewData["Proveedor"] as Proveedor;
+    var Proveedor = (ViewData["Proveedor"] as Proveedor)?? new Proveedor();
 }
 <div class="container-fluid">
 

@@ -1,3 +1,271 @@
-﻿@{
+﻿@using FrutosElqui.Core.Misc
+@{
+    var bancos = (ViewData["Bancos"] as List<Banco>)?? new List<Banco>();
+    var tipoCuentas = (ViewData["TiposCuentas"] as List<TipoCuenta>)?? new List<TipoCuenta>();
+    var tipoPagos = (ViewData["TipoPagos"] as List<TipoPago>)?? new List<TipoPago>();
+    var giros = (ViewData["Giros"] as List<Giro>)?? new List<Giro>();
+}
+<div class="container-fluid">
+    <div class="row form-group">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="col-form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombreProveedor" required maxlength="100" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div class="form-group">
+                <label class="col-form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccionProveedor" required maxlength="100" />
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="form-group">
+                <label class="col-form-label">R.U.T</label>
+                <input type="text" class="form-control" id="rutProveedor" required maxlength="15" />
+            </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="form-group">
+                <label for="bancoSelected" class="col-form-label">Banco</label>
+                <div class="input-group">
+                    <select class="form-control" id="bancoSelected">
+                        @foreach (var banco in bancos)
+                        {
+                            <option value="@banco.IdBanco">@banco.NombreBanco</option>
+                        }
+                    </select>&nbsp;
+                    <button class="btn btn-outline-success" id="botonNuevoBanco" onclick="$('#modalNuevoBanco').modal('show')"><i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="form-group">
+                <label for="tipoCuentaSelected" class="col-form-label">Tipo de cuenta</label>
+                <div class="input-group">
+                    <select class="form-control" id="tipoCuentaSelected">
+                        @foreach (var tipoCuenta in tipoCuentas)
+                        {
+                            <option value="@tipoCuenta.IdTipoCuenta">@tipoCuenta.NombreTipoCuenta</option>
+                        }
+                    </select>&nbsp;
+                    <button class="btn btn-outline-success" id="botonNuevoTipoCuenta" onclick="$('#modalTipoCuenta').modal('show')"><i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <div class="form-group">
+                <label for="tipoPagoSelected" class="col-form-label">Tipo de pago</label>
+                <div class="input-group">
+                    <select class="form-control" id="tipoPagoSelected">
+                        @foreach (var tipoPago in tipoPagos)
+                        {
+                            <option value="@tipoPago.IdTipoPago">@tipoPago.NombreTipoPago</option>
+                        }
+                    </select>&nbsp;
+                    <button class="btn btn-outline-success" id="botonNuevoTipoPago" onclick="$('#modalNuevoTipoPago').modal('show')"><i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label">Dia de facturación</label>
+                <input type="number" class="form-control" id="diaFacturacion" required min="0" max="31" />
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label">Numero de cuenta</label>
+                <input type="number" class="form-control" id="numeroCuenta" required min="0" rquired />
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="form-group">
+                <label for="giroSelected" class="col-form-label">Giro</label>
+                <div class="input-group">
+                    <select class="form-control" id="giroSelected">
+                        @foreach (var giro in giros)
+                        {
+                            <option value="@giro.IdGiro">@giro.NombreGiro</option>
+                        }
+                    </select>&nbsp;
+                    <button class="btn btn-outline-success" id="botonNuevoGiro" onclick="$('#modalNuevoGiro').modal('show')"><i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="row text-center">
+        <div class="col-sm-12 col-md-12 col-lg-6 mb-2">
+            <button class="btn btn-info"><i class="fas fa-arrow-left"></i>&nbsp;Volver atrás</button>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <button class="btn btn-success"><i class="far fa-plus-square"></i>&nbsp;Agregar nuevo proveedor</button>
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" id="modalNuevoGiro" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo giro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-form-label" for="nuevoNombreGiro">Nombre del nuevo giro</label>
+                                <input class="form-control" type="text" id="nuevoNombreGiro" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-form-label" for="nuevoGiroCodigoSII">Código en S.I.I</label>
+                                <input class="form-control" type="text" id="nuevoGiroCodigoSII" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="GuardarNuevoGiro()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalNuevoTipoPago" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo tipo de pago</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-form-label" for="nuevoNombreTipoDePago">Nombre del nuevo tipo de pago</label>
+                                <input class="form-control" type="text" id="nuevoNombreTipoDePago" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="GuardarNuevoTipoDePago()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalTipoCuenta" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo tipo de cuentas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-form-label" for="nuevoNombreTipoCuenta">Nombre del nuevo tipo de cuenta</label>
+                                <input class="form-control" type="text" id="nuevoNombreTipoCuenta" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="GuardarNuevoTipoCuenta()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalNuevoBanco" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo banco</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-form-label" for="nuevoNombreBanco">Nombre del nuevo banco</label>
+                                <input class="form-control" type="text" id="nuevoNombreBanco" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="GuardarNuevoBanco()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+    <script type="text/javascript">
+        function GuardarNuevoGiro() {
+
+        }
+
+        function RefrescarGiros() {
+
+        }
+
+        function GuardarNuevoTipoDePago() {
+
+        }
+
+        function RefrescarTiposDePagos() {
+
+        }
+
+        function GuardarNuevoTipoCuenta() {
+
+        }
+
+        function ResfrescarTipoDeCuentas() {
+
+        }
+
+        function GuardarNuevoBanco() {
+
+        }
+
+        function RefrescarBancos() {
+
+        }
+
+    </script>
 }
