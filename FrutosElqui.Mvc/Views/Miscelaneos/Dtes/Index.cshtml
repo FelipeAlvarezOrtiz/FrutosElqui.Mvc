@@ -1,0 +1,238 @@
+﻿@using FrutosElqui.Core.Misc
+@{
+    //var dtes = ViewData["Dtes"] as List<DocumentoTributario>;
+    //var giros = ViewData["Giros"] as List<Giro>;
+}
+<br />
+<div class="container-fluid">
+    <h4>Documentos tributarios</h4>
+    <hr />
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12">
+                    <table id="tablaDtes" class="table table-striped table-bordered" style="width: 100%">
+                        <thead>
+                            <tr class="text-center">
+                                <th>Nombre D.T.E</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td>Una prueba no mais</td>
+                                <td>
+                                    <button class="btn btn-outline-danger">Borrar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12 col-lg-12 mb-3">
+                    <button id="nuevoDteButton" class="btn btn-success" data-toggle="modal" data-target="#modalNuevoDte"><i class="far fa-plus-square"></i>&nbsp;Ingresar nuevo D.T.E</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <h4>Giros tributarios</h4>
+    <hr />
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12">
+                    <table id="tablaGiros" class="table table-striped table-bordered" style="width: 100%">
+                        <thead>
+                            <tr class="text-center">
+                                <th>Nombre Giro</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td>Una prueba no mais</td>
+                                <td>
+                                    <button class="btn btn-outline-danger">Borrar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12 col-lg-12 mb-3">
+                    <button id="nuevoGiroButton" class="btn btn-success" data-toggle="modal" data-target="#modalNuevoGiro"><i class="far fa-plus-square"></i>&nbsp;Ingresar nuevo giro</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalNuevoDte" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloNuevoDte">Nuevo documento tributario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <label for="nombreDte" class="control-label">Nombre del nuevo documento tributario</label>
+                        </div>
+                        <div class="col-md-12 col-lg-12">
+                            <input class="form-control" type="text" id="nombreDte" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="IngresarNuevoDte()">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalNuevoGiro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloNuevoGiro">Nuevo giro tributario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <label for="nombreGiro" class="control-label">Nombre del nuevo giro</label>
+                        </div>
+                        <div class="col-md-12 col-lg-12">
+                            <input class="form-control" type="text" id="nombreGiro" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="IngresarNuevoGiro()">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#tablaDtes').DataTable({
+                responsive: true,
+                order: [[0, 'desc']],
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Todo"]],
+                stateSave: true,
+                dom: 'Bfrtip',
+                autoFill: true,
+                buttons: ['excel', 'pdf'],
+                language: {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
+                }
+            });
+            $('#tablaGiros').DataTable({
+                responsive: true,
+                order: [[0, 'desc']],
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Todo"]],
+                stateSave: true,
+                dom: 'Bfrtip',
+                autoFill: true,
+                buttons: ['excel', 'pdf'],
+                language: {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
+                }
+            });
+        });
+
+        function IngresarNuevoDte() {
+            const nuevoNombreDte = $('#nombreDte').val();
+            if (nuevoNombreDte.length >= 3) {
+                $.ajax({
+                    url: '@Url.Action("CrearDte","Miscelaneos")',
+                    type: 'POST',
+                    data: `{ "NombreDte" : ${nuevoNombreDte}} `,
+                    async: true,
+                    success: function() {
+                        Swal.fire({
+                            title: '¡Exito!',
+                            text: 'Se ha creado el nuevo dte.',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        }).then(function () {
+                            location.reload();
+                        });
+                    },
+                    error: function(response) {
+                        Swal.fire({
+                            title: '¡Error!',
+                            text: response.responseText,
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Información',
+                    text: 'El nombre no puede ser vacio',
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                });
+            }
+        }
+
+        function IngresarNuevoGiro() {
+            const nuevoNombreGiro = $('#nombreGiro').val();
+            if (nuevoNombreGiro.length >= 3) {
+                $.ajax({
+                    url: '',
+                    type: 'POST',
+                    data: `{ "NombreGiro" : ${nuevoNombreGiro}} `,
+                    async: true,
+                    success: function() {
+                        Swal.fire({
+                            title: '¡Exito!',
+                            text: 'Se ha creado el nuevo giro.',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        }).then(function () {
+                            location.reload();
+                        });
+                    },
+                    error: function(response) {
+                        Swal.fire({
+                            title: '¡Error!',
+                            text: response.responseText,
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Información',
+                    text: 'El nombre no puede ser vacio',
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                });
+            }
+        }
+
+    </script>
+}
