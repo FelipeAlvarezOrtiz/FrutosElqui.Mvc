@@ -1,82 +1,85 @@
 ﻿@using FrutosElqui.Core.Misc
 @{
-    var dtes = ViewData["Dtes"] as List<DocumentoTributario>;
-    var giros = ViewData["Giros"] as List<Giro>;
+    var comunas = ViewData["Comunas"] as List<Comuna>;
+    var sectores = ViewData["Sectores"] as List<Sector>;
 }
-<br />
 <div class="container-fluid">
-    <h4>Documentos tributarios</h4>
+    <h4>Comunas</h4>
     <hr />
     <div class="row">
         <div class="col-12">
             <div class="row">
                 <div class="col-12">
-                    <table id="tablaDtes" class="table table-striped table-bordered" style="width: 100%">
+                    <table id="tablaComunas" class="table table-striped table-bordered" style="width: 100%">
                         <thead>
                             <tr class="text-center">
-                                <th>Id D.T.E</th>
-                                <th>Nombre D.T.E</th>
+                                <th>Nombre</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach (var dte in dtes)
-                        {
-                            <tr class="text-center">
-                                <td>@dte.NombreDte</td>
-                                <td>@dte.IdDte</td>
-                            </tr>
-                        }
+                            @foreach (var comuna in comunas)
+                            {
+                                <tr class="text-center">
+                                    <td>@comuna.NombreComuna</td>
+                                    <td>
+                                        <button class="btn btn-danger">Borrar</button>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-md-12 col-lg-12 mb-3">
-                    <button id="nuevoDteButton" class="btn btn-success" data-toggle="modal" data-target="#modalNuevoDte"><i class="far fa-plus-square"></i>&nbsp;Ingresar nuevo D.T.E</button>
+                    <button id="nuevoDteButton" class="btn btn-success" data-toggle="modal" data-target="#modalNuevaComuna"><i class="far fa-plus-square"></i>&nbsp;Ingresar nueva comuna</button>
                 </div>
             </div>
         </div>
     </div>
     <hr />
-    <h4>Giros tributarios</h4>
+    <h4>Sectores</h4>
     <hr />
     <div class="row">
         <div class="col-12">
             <div class="row">
                 <div class="col-12">
-                    <table id="tablaGiros" class="table table-striped table-bordered" style="width: 100%">
+                    <table id="tablaSectores" class="table table-striped table-bordered" style="width: 100%">
                         <thead>
                             <tr class="text-center">
-                                <th>Identificador S.I.I</th>
-                                <th>Nombre Giro</th>
+                                <th>Nombre sector</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach (var giro in giros)
-                        {
-                            <tr class="text-center">
-                                <td>@giro.IdGiroSii</td>
-                                <td>@giro.NombreGiro</td>
-                            </tr>
-                        }
+                            @foreach (var sector in sectores)
+                            {
+                                <tr class="text-center">
+                                    <td>@sector.NombreSector</td>
+                                    <td>
+                                        <button class="btn btn-danger">Borrar</button>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-md-12 col-lg-12 mb-3">
-                    <button id="nuevoGiroButton" class="btn btn-success" data-toggle="modal" data-target="#modalNuevoGiro"><i class="far fa-plus-square"></i>&nbsp;Ingresar nuevo giro</button>
+                    <button id="nuevoGiroButton" class="btn btn-success" data-toggle="modal" data-target="#modalNuevoSector"><i class="far fa-plus-square"></i>&nbsp;Ingresar nuevo sector</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="modalNuevoDte" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalNuevoSector" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="tituloNuevoDte">Nuevo documento tributario</h5>
+                <h5 class="modal-title" id="tituloNuevoDte">Nuevo sector</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -85,27 +88,27 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 col-lg-12">
-                            <label for="nombreDte" class="control-label">Nombre del nuevo documento tributario</label>
+                            <label for="nombreSector" class="control-label">Nombre del nuevo sector</label>
                         </div>
                         <div class="col-md-12 col-lg-12">
-                            <input class="form-control" type="text" id="nombreDte" autocomplete="off" />
+                            <input class="form-control" type="text" id="nombreSector" autocomplete="off" />
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" onclick="IngresarNuevoDte()">Guardar cambios</button>
+                <button type="button" class="btn btn-primary" onclick="IngresarNuevoSector()">Guardar cambios</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="modalNuevoGiro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalNuevaComuna" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="tituloNuevoGiro">Nuevo giro tributario</h5>
+                <h5 class="modal-title" id="tituloNuevoGiro">Nueva comuna</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -114,37 +117,27 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 col-lg-12">
-                            <label for="nombreGiro" class="control-label">Nombre del nuevo giro</label>
+                            <label for="nombreComuna" class="control-label">Nombre de la nueva comuna</label>
                         </div>
                         <div class="col-md-12 col-lg-12">
-                            <input class="form-control" type="text" id="nombreGiro" autocomplete="off" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-lg-12">
-                            <label for="idGiro" class="control-label">Identificador del giro en S.I.I</label>
-                        </div>
-                        <div class="col-md-12 col-lg-12">
-                            <input class="form-control" type="number" min="0" id="idGiro" autocomplete="off" />
+                            <input class="form-control" type="text" id="nombreComuna" autocomplete="off" />
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" onclick="IngresarNuevoGiro()">Guardar cambios</button>
+                <button type="button" class="btn btn-primary" onclick="IngresarComuna()">Guardar cambios</button>
             </div>
         </div>
     </div>
 </div>
 
-
-@section Scripts
-{
-    <partial name="_ValidationScriptsPartial"/>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#tablaDtes').DataTable({
+        $(document).ready(function () {
+            $('#tablaSectores').DataTable({
                 responsive: true,
                 order: [[0, 'desc']],
                 lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Todo"]],
@@ -156,7 +149,7 @@
                     "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
                 }
             });
-            $('#tablaGiros').DataTable({
+            $('#tablaComunas').DataTable({
                 responsive: true,
                 order: [[0, 'desc']],
                 lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Todo"]],
@@ -170,19 +163,19 @@
             });
         });
 
-        function IngresarNuevoDte() {
-            const nuevoNombreDte = $('#nombreDte').val();
-            if (nuevoNombreDte.length >= 3) {
+        function IngresarComuna() {
+            const nuevaComuna = $('#nombreComuna').val();
+            if (nuevaComuna.length > 3) {
                 $.ajax({
-                    url: '@Url.Action("CrearDte","Miscelaneos")',
+                    url: '@Url.Action("","")',
                     type: 'POST',
-                    data: `{ "NombreDte" : "${nuevoNombreDte}"} `,
+                    data: `{ "NombreComuna" : "${nuevaComuna}" }`,
                     contentType: "application/json; charset=utf-8",
                     async: true,
                     success: function() {
                         Swal.fire({
                             title: '¡Exito!',
-                            text: 'Se ha creado el nuevo dte.',
+                            text: 'Se ha creado la nueva comuna.',
                             icon: 'success',
                             confirmButtonText: 'Ok'
                         }).then(function () {
@@ -208,20 +201,19 @@
             }
         }
 
-        function IngresarNuevoGiro() {
-            const nuevoNombreGiro = $('#nombreGiro').val();
-            const nuevoIdGiro = $('#idGiro').val();
-            if (nuevoNombreGiro.length >= 3 && nuevoIdGiro > 0) {
+        function IngresarSector() {
+            const nuevoSector = $('#nombreSector').val();
+            if (nuevoSector.length > 3) {
                 $.ajax({
-                    url: '@Url.Action("CrearGiro","Miscelaneos")',
+                    url: '@Url.Action("","")',
                     type: 'POST',
-                    data: `{"NombreGiro" : "${nuevoNombreGiro}","IdGiroSii" : "${nuevoIdGiro}" }`,
+                    data: `{ "NombreSector" : "${nuevoSector}" }`,
                     contentType: "application/json; charset=utf-8",
                     async: true,
                     success: function() {
                         Swal.fire({
                             title: '¡Exito!',
-                            text: 'Se ha creado el nuevo giro.',
+                            text: 'Se ha creado el nuevo sector.',
                             icon: 'success',
                             confirmButtonText: 'Ok'
                         }).then(function () {
@@ -240,12 +232,11 @@
             } else {
                 Swal.fire({
                     title: 'Información',
-                    text: 'Revise los campos',
+                    text: 'El nombre no puede ser vacio',
                     icon: 'info',
                     confirmButtonText: 'Ok'
                 });
             }
         }
-
     </script>
 }

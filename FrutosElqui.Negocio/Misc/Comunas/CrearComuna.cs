@@ -11,7 +11,7 @@ namespace FrutosElqui.Negocio.Misc.Comunas
 {
     public class CrearComuna
     {
-        public class Command : IRequest
+        public record Command : IRequest
         {
             public string NombreComuna { get; set; }
         }

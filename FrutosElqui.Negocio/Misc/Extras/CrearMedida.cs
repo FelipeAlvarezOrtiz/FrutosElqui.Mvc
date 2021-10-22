@@ -7,14 +7,13 @@ using FrutosElqui.Persistencia;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace FrutosElqui.Negocio.Misc.Giros
+namespace FrutosElqui.Negocio.Misc.Extras
 {
-    public class CrearGiro
+    public class CrearMedida
     {
-        public class Command : IRequest
+        public record Command : IRequest
         {
-            public string NombreGiro { get; set; }
-            public int IdGiroSii { get; set; }
+            public string NombreMedida { get; set; }
         }
 
         public class Handler : IRequestHandler<Command>
@@ -28,17 +27,16 @@ namespace FrutosElqui.Negocio.Misc.Giros
 
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                if (await _context.Giros.Where(giro => giro.IdGiroSii == request.IdGiroSii)
-                    .FirstOrDefaultAsync(cancellationToken) is not null)
-                    throw new Exception("Ese giro ya existe.");
-                await _context.Giros.AddAsync(new Giro()
+                if (await _context.Medidas
+                    .Where(medida => medida.NombreMedida.Equals(request.NombreMedida))
+                    .FirstOrDefaultAsync() is not null) throw new Exception("Esa medida ya existe.");
+                await _context.Medidas.AddAsync(new Medida()
                 {
-                    NombreGiro = request.NombreGiro,
-                    IdGiroSii = (uint)request.IdGiroSii
+                    NombreMedida = request.NombreMedida
                 }, cancellationToken);
                 return await _context.SaveChangesAsync(cancellationToken) > 0
                     ? Unit.Value
-                    : throw new Exception("Problema al guardar el giro");
+                    : throw new Exception("Problema al guardar la medida.");
             }
         }
     }
