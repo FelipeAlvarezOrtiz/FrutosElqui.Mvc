@@ -1,10 +1,12 @@
 using FrutosElqui.Persistencia;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.IO;
 using System.Windows.Forms;
 using FrutosElqui.Negocio.Misc.Bancos;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FrutosElqui.Escritorio
@@ -17,11 +19,14 @@ namespace FrutosElqui.Escritorio
         [STAThread]
         static void Main()
         {
-            var builder = new HostBuilder().ConfigureServices(((_, services) =>
+            var builder = Host.CreateDefaultBuilder().ConfigureAppConfiguration((_, configBuilder) =>
+            {
+                BuildConfig(configBuilder);
+            }).ConfigureServices(((context, services) =>
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(
-                        "Data Source=DESKTOP-159BML6\\LOCALMSSQL;Initial Catalog=FrutosElquiCore;Integrated Security=True", optionsBuilders =>
+                        context.Configuration.GetConnectionString("Conexion"), optionsBuilders =>
                         {
                             optionsBuilders.MigrationsAssembly("FrutosElqui.Persistencia");
                             optionsBuilders.EnableRetryOnFailure(10);
@@ -44,6 +49,14 @@ namespace FrutosElqui.Escritorio
             {
                 Console.WriteLine(exception.Message);
             }
+        }
+
+        static void BuildConfig(IConfigurationBuilder builder)
+        {
+            builder.SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json",optional:false,reloadOnChange:true)
+                .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")?? "Production"}.json",optional:true)
+                .AddEnvironmentVariables();
         }
     }
 }
