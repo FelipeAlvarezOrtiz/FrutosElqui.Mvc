@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrutosElqui.Mvc", "FrutosEl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrutosElqui.Core", "FrutosElqui.Core\FrutosElqui.Core.csproj", "{E7169084-5C77-4C84-9D76-EC4F02A6EE97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrutosElqui.Negocio", "FrutosElqui.Negocio\FrutosElqui.Negocio.csproj", "{BAB53125-B4A3-4C33-B0E5-68C8A69AFE0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrutosElqui.Negocio", "FrutosElqui.Negocio\FrutosElqui.Negocio.csproj", "{BAB53125-B4A3-4C33-B0E5-68C8A69AFE0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrutosElqui.Persistencia", "FrutosElqui.Persistencia\FrutosElqui.Persistencia.csproj", "{19A23D95-067D-49AA-B761-AA619A6C73E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrutosElqui.Persistencia", "FrutosElqui.Persistencia\FrutosElqui.Persistencia.csproj", "{19A23D95-067D-49AA-B761-AA619A6C73E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrutosElqui.Escritorio", "FrutosElqui.Escritorio\FrutosElqui.Escritorio.csproj", "{A3976FE2-9602-4099-8F81-F63854FABF8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{19A23D95-067D-49AA-B761-AA619A6C73E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19A23D95-067D-49AA-B761-AA619A6C73E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19A23D95-067D-49AA-B761-AA619A6C73E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3976FE2-9602-4099-8F81-F63854FABF8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3976FE2-9602-4099-8F81-F63854FABF8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3976FE2-9602-4099-8F81-F63854FABF8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3976FE2-9602-4099-8F81-F63854FABF8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

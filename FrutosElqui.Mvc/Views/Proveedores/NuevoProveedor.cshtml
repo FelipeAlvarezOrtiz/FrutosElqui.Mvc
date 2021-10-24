@@ -236,7 +236,42 @@
     <partial name="_ValidationScriptsPartial"/>
     <script type="text/javascript">
         function GuardarNuevoGiro() {
-
+            const nuevoNombreGiro = $('#nombreGiro').val();
+            const nuevoIdGiro = $('#nuevoGiroCodigoSII').val();
+            if (nuevoNombreGiro.length >= 3 && nuevoIdGiro > 0) {
+                $.ajax({
+                    url: '@Url.Action("CrearGiro","Miscelaneos")',
+                    type: 'POST',
+                    data: `{"NombreGiro" : "${nuevoNombreGiro}","IdGiroSii" : "${nuevoIdGiro}" }`,
+                    contentType: "application/json; charset=utf-8",
+                    async: true,
+                    success: function() {
+                        Swal.fire({
+                            title: '¡Exito!',
+                            text: 'Se ha creado el nuevo giro.',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        }).then(function () {
+                            RefrescarGiros();
+                        });
+                    },
+                    error: function(response) {
+                        Swal.fire({
+                            title: '¡Error!',
+                            text: response.responseText,
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Información',
+                    text: 'Revise los campos',
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                });
+            }
         }
 
         function RefrescarGiros() {
@@ -252,7 +287,42 @@
         }
 
         function GuardarNuevoTipoCuenta() {
-
+            const nuevoNombre = $('#nuevoNombreTipoCuenta').val();
+            if (nuevoNombre !== '' && nuevoNombre.length >= 3) {
+                const dataPayload = "{ \"NombreTipoCuenta\" : \""+nuevoNombre+"\" }";
+                $.ajax({
+                    url: '@Url.Action("CrearBanco", "Bancos")',
+                    type: 'POST',
+                    async: true,
+                    data: dataPayload,
+                    contentType: "application/json; charset=utf-8",
+                    success: function(response) {
+                        Swal.fire({
+                            title: '¡Exito!',
+                            text: 'Se ha creado el nuevo banco.',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        }).then(function () {
+                            ResfrescarTipoDeCuentas();
+                        });
+                    },
+                    error: function(response) {
+                        Swal.fire({
+                            title: '¡Error!',
+                            text: response.responseText,
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Información',
+                    text: 'Debe ingresar un nombre',
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                });
+            }
         }
 
         function ResfrescarTipoDeCuentas() {
@@ -260,7 +330,42 @@
         }
 
         function GuardarNuevoBanco() {
-
+            const nuevoNombre = $('#nuevoNombreBanco').val();
+            if (nuevoNombre !== '' && nuevoNombre.length >= 3) {
+                const dataPayload = "{ \"NombreBanco\" : \""+nuevoNombre+"\" }";
+                $.ajax({
+                    url: '@Url.Action("CrearBanco", "Bancos")',
+                    type: 'POST',
+                    async: true,
+                    data: dataPayload,
+                    contentType: "application/json; charset=utf-8",
+                    success: function(response) {
+                        Swal.fire({
+                            title: '¡Exito!',
+                            text: 'Se ha creado el nuevo banco.',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        }).then(function () {
+                            RefrescarBancos();
+                        });
+                    },
+                    error: function(response) {
+                        Swal.fire({
+                            title: '¡Error!',
+                            text: response.responseText,
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Información',
+                    text: 'Debe ingresar un nombre',
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                });
+            }
         }
 
         function RefrescarBancos() {

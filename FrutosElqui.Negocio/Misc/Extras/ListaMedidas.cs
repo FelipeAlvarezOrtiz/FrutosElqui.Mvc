@@ -6,13 +6,13 @@ using FrutosElqui.Persistencia;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace FrutosElqui.Negocio.Misc.Dtes
+namespace FrutosElqui.Negocio.Misc.Extras
 {
-    public class ListaDtes
+    public class ListaMedidas
     {
-        public record Query : IRequest<List<DocumentoTributario>> { }
+        public record Query : IRequest<List<Medida>> { }
 
-        public class Handler : IRequestHandler<Query, List<DocumentoTributario>>
+        public class Handler : IRequestHandler<Query, List<Medida>>
         {
             private readonly ApplicationDbContext _context;
 
@@ -20,9 +20,9 @@ namespace FrutosElqui.Negocio.Misc.Dtes
             {
                 _context = context;
             }
-            public async Task<List<DocumentoTributario>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<List<Medida>> Handle(Query request, CancellationToken cancellationToken)
             {
-                return await _context.DocumentosTributarios.ToListAsync(cancellationToken);
+                return await _context.Medidas.ToListAsync(cancellationToken);
             }
         }
     }

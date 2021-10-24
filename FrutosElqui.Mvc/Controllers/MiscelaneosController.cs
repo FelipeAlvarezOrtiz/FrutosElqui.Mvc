@@ -123,8 +123,11 @@ namespace FrutosElqui.Mvc.Controllers
         #region Sabores, categorias y medidas - EXTRAS
 
         [Route("Extras")]
-        public IActionResult IndexExtras()
+        public async Task<IActionResult> IndexExtras()
         {
+            ViewData["Sabores"] = await Mediator.Send(new ListaSabores.Query());
+            ViewData["Medidas"] = await Mediator.Send(new ListaMedidas.Query());
+            ViewData["Categorias"] = await Mediator.Send(new ListaCategorias.Query());
             return View("Extras/Index");
         }
 
@@ -166,7 +169,27 @@ namespace FrutosElqui.Mvc.Controllers
                 return BadRequest(error.Message);
             }
         }
+
+        [HttpGet("ObtenerMedidas")]
+        public async Task<ActionResult<List<Medida>>> ObtenerMedidas()
+        {
+            return await Mediator.Send(new ListaMedidas.Query());
+        }
+
+        [HttpGet("ObtenerCategorias")]
+        public async Task<ActionResult<List<Categoria>>> ObtenerCategorias()
+        {
+            return await Mediator.Send(new ListaCategorias.Query());
+        }
+
+        [HttpGet("ObtenerSabores")]
+        public async Task<ActionResult<List<Sabor>>> ObtenerSabores()
+        {
+            return await Mediator.Send(new ListaSabores.Query());
+        }
+
         #endregion
+
 
     }
 }

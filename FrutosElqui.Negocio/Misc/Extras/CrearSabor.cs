@@ -28,7 +28,7 @@ namespace FrutosElqui.Negocio.Misc.Extras
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
                 if (await _context.Sabores
-                    .Where(sabor => sabor.Equals(request.NombreSabor))
+                    .Where(sabor => sabor.NombreSabor.Equals(request.NombreSabor))
                     .FirstOrDefaultAsync() is not null) throw new Exception("Ese sector ya existe.");
                 await _context.Sabores.AddAsync(new Sabor()
                 {

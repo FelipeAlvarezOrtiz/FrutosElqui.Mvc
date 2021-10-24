@@ -104,7 +104,7 @@
             <a class="btn btn-info" asp-controller="Productos" asp-action="Index"><i class="fas fa-arrow-left"></i>&nbsp;Volver atrás</a>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6 mb-2">
-            <button class="btn btn-success"><i class="far fa-plus-square"></i>&nbsp;Agregar nuevo producto</button>
+            <button class="btn btn-success" onclick="GuardarProducto()"><i class="far fa-plus-square"></i>&nbsp;Agregar nuevo producto</button>
         </div>
     </div>
 </div>
@@ -205,27 +205,256 @@
     <partial name="_ValidationScriptsPartial"/>
     <script type="text/javascript">
         function CrearSabor() {
-
+            const nuevoSabor = $('#nuevoNombreSabor').val();
+            if (nuevoSabor.length > 3) {
+                const dataPayload = "{ \"NombreSabor\" : \"" + nuevoSabor + "\" }";
+                $.ajax({
+                    url: '@Url.Action("CrearSabor", "Miscelaneos")',
+                    type: 'POST',
+                    async: true,
+                    data: dataPayload,
+                    contentType: "application/json; charset=utf-8",
+                    success: function(response) {
+                        $("#nuevoNombreSabor").val('');
+                        $("#modalNuevoSabor").modal('hide');
+                        Swal.fire({
+                            title: '¡Exito!',
+                            text: 'Se ha creado el nuevo sabor.',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        }).then(function() {
+                            RefrescarSabores();
+                        });
+                    },
+                    error: function(response) {
+                        Swal.fire({
+                            title: '¡Error!',
+                            text: response.responseText,
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Información',
+                    text: 'Debe ingresar un nombre',
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                });
+            }
         }
 
         function RefrescarSabores() {
-
+            $.ajax({
+                url: "@Url.Action("ObtenerSabores", "Miscelaneos")",
+                type: "GET",
+                data: "",
+                contentType: "application/json; charset=utf-8",
+                success: function(data) {
+                    let results = $.parseJSON(JSON.stringify(data));
+                    document.getElementById('saborSelected').innerHTML = "";
+                    $('#saborSelected').append('<option value="0">-- Escoge sabor --</option>');
+                    $.each(results,
+                        function(i, d) {
+                            $('#saborSelected').append('<option value = "' + d.idSabor + '">' + d.nombreSabor + '</option>');
+                        });
+                },
+                error: function(response) {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: response.responseText,
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    });
+                }
+            });
         }
 
         function CrearCategoria() {
-
+            const nuevaCategoria = $('#nuevoNombreCategoria').val();
+            if (nuevaCategoria.length > 3) {
+                const dataPayload = "{ \"NombreCategoria\" : \"" + nuevaCategoria + "\" }";
+                $.ajax({
+                    url: '@Url.Action("CrearCategoria", "Miscelaneos")',
+                    type: 'POST',
+                    async: true,
+                    data: dataPayload,
+                    contentType: "application/json; charset=utf-8",
+                    success: function(response) {
+                        $("#nuevoNombreCategoria").val('');
+                        $("#modalNuevaCategoria").modal('hide');
+                        Swal.fire({
+                            title: '¡Exito!',
+                            text: 'Se ha creado la nueva categoría.',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        }).then(function() {
+                            RefrescarCategorias();
+                        });
+                    },
+                    error: function(response) {
+                        Swal.fire({
+                            title: '¡Error!',
+                            text: response.responseText,
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Información',
+                    text: 'Debe ingresar un nombre',
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                });
+            }
         }
 
         function RefrescarCategorias() {
-
+            $.ajax({
+                url: "@Url.Action("ObtenerCategorias", "Miscelaneos")",
+                type: "GET",
+                data: "",
+                contentType: "application/json; charset=utf-8",
+                success: function(data) {
+                    let results = $.parseJSON(JSON.stringify(data));
+                    document.getElementById('categoriaSelected').innerHTML = "";
+                    $('#categoriaSelected').append('<option value="0">-- Escoge categoría --</option>');
+                    $.each(results,
+                        function(i, d) {
+                            $('#categoriaSelected').append('<option value = "' + d.idCategoria + '">' + d.nombreCategoria + '</option>');
+                        });
+                },
+                error: function(response) {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: response.responseText,
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    });
+                }
+            });
         }
 
         function CrearMedida() {
-
+            const nuevaMedida = $('#nuevoNombreMedida').val();
+            if (nuevaMedida.length > 3) {
+                const dataPayload = "{ \"NombreMedida\" : \"" + nuevaMedida + "\" }";
+                $.ajax({
+                    url: '@Url.Action("CrearMedida", "Miscelaneos")',
+                    type: 'POST',
+                    async: true,
+                    data: dataPayload,
+                    contentType: "application/json; charset=utf-8",
+                    success: function(response) {
+                        $("#nuevoNombreMedida").val('');
+                        $("#modalNuevaMedida").modal('hide');
+                        Swal.fire({
+                            title: '¡Exito!',
+                            text: 'Se ha creado la nueva medida.',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        }).then(function() {
+                            RefrescarMedidas();
+                        });
+                    },
+                    error: function(response) {
+                        Swal.fire({
+                            title: '¡Error!',
+                            text: response.responseText,
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Información',
+                    text: 'Debe ingresar un nombre',
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                });
+            }
         }
 
         function RefrescarMedidas() {
+            $.ajax({
+                url: "@Url.Action("ObtenerMedidas", "Miscelaneos")",
+                type: "GET",
+                data: "",
+                contentType: "application/json; charset=utf-8",
+                success: function(data) {
+                    let results = $.parseJSON(JSON.stringify(data));
+                    document.getElementById('medidaSelected').innerHTML = "";
+                    $('#medidaSelected').append('<option value="0">-- Escoge medida --</option>');
+                    $.each(results,
+                        function(i, d) {
+                            $('#medidaSelected').append('<option value = "' + d.idMedida + '">' + d.nombreMedida + '</option>');
+                        });
+                },
+                error: function(response) {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: response.responseText,
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    });
+                }
+            });
+        }
 
+        function GuardarProducto() {
+            const medidaSeleccionada = $('#medidaSelected').val();
+            const categoriaSeleccionada = $('#categoriaSelected').val();
+            const saborSeleccionada = $('#saborSelected').val();
+            const nombreProducto = $('#nombreProducto').val();
+            const proveedorSeleccionado = $('#proveedorSelected').val();
+            if (medidaSeleccionada > 0 && categoriaSeleccionada > 0 && saborSeleccionada > 0 && proveedorSeleccionado > 0 && nombreProducto.length > 3) {
+                const data = "{" +
+                    "\"NombreProducto\": \""+nombreProducto+"\"," +
+                    "\"DescripcionProducto\": \""+nombreProducto+"\"," +
+                    "\"PrecioMayorista\": 0," +
+                    "\"PrecioTotal\": 0," +
+                    "\"Categoria\": "+categoriaSeleccionada+"," +
+                    "\"Medida\":  "+medidaSeleccionada+"," +
+                    "\"Proveedor\": "+proveedorSeleccionado+"," +
+                    "\"Sabor\": "+saborSeleccionada+" " +
+                    "}";
+                $.ajax({
+                    url: '@Url.Action("CrearNuevoProducto", "Productos")',
+                    type: 'POST',
+                    async: true,
+                    data: data,
+                    contentType: "application/json; charset=utf-8",
+                    success: function(response) {
+                        Swal.fire({
+                            title: '¡Exito!',
+                            text: 'Se ha creado el nuevo producto.',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        }).then(function() {
+                            location.reload();
+                        });
+                    },
+                    error: function(response) {
+                        Swal.fire({
+                            title: '¡Error!',
+                            text: response.responseText,
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Información',
+                    text: 'Debe ingresar todos los campos.',
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                });
+            }
         }
     </script>
 }

@@ -9,7 +9,7 @@ namespace FrutosElqui.Negocio.Misc.Comunas
 {
     public class ObtenerComuna
     {
-        public class Query : IRequest<Comuna>
+        public record Query : IRequest<Comuna>
         {
             public int IdComuna { get; set; }
         }
