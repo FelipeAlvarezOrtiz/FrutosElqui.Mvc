@@ -29,25 +29,14 @@ namespace FrutosElqui.Escritorio
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(364, 114);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(602, 227);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainFrame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1374, 629);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1484, 681);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "MainFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainFrame";
@@ -56,7 +45,5 @@ namespace FrutosElqui.Escritorio
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
     }
 }

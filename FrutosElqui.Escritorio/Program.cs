@@ -19,21 +19,7 @@ namespace FrutosElqui.Escritorio
         [STAThread]
         static void Main()
         {
-            var builder = Host.CreateDefaultBuilder().ConfigureAppConfiguration((_, configBuilder) =>
-            {
-                BuildConfig(configBuilder);
-            }).ConfigureServices(((context, services) =>
-            {
-                services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(
-                        context.Configuration.GetConnectionString("Conexion"), optionsBuilders =>
-                        {
-                            optionsBuilders.MigrationsAssembly("FrutosElqui.Persistencia");
-                            optionsBuilders.EnableRetryOnFailure(10);
-                        }));
-                services.AddMediatR(typeof(ListaDeBancos.Handler));
-                services.AddScoped<MainFrame>();
-            }));
+            var builder = BuildHost();
             var host = builder.Build();
             using var scope = host.Services.CreateScope();
             try
@@ -51,12 +37,33 @@ namespace FrutosElqui.Escritorio
             }
         }
 
-        static void BuildConfig(IConfigurationBuilder builder)
+        private static void BuildConfig(IConfigurationBuilder builder)
         {
             builder.SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json",optional:false,reloadOnChange:true)
                 .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")?? "Production"}.json",optional:true)
                 .AddEnvironmentVariables();
+        }
+
+        private static IHostBuilder BuildHost()
+        {
+            return Host.CreateDefaultBuilder().ConfigureAppConfiguration((_, configBuilder) =>
+            {
+                BuildConfig(configBuilder);
+            }).ConfigureServices(ConfigurarServicios);
+        }
+
+        private static void ConfigurarServicios(HostBuilderContext context,IServiceCollection services)
+        {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    context.Configuration.GetConnectionString("Conexion"), optionsBuilders =>
+                    {
+                        optionsBuilders.MigrationsAssembly("FrutosElqui.Persistencia");
+                        optionsBuilders.EnableRetryOnFailure(10);
+                    }));
+            services.AddMediatR(typeof(ListaDeBancos.Handler));
+            services.AddScoped<MainFrame>();
         }
     }
 }

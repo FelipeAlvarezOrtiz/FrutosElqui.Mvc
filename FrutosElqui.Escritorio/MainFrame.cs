@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-using FrutosElqui.Negocio.Misc.Bancos;
 using FrutosElqui.Persistencia;
 using MediatR;
 
@@ -16,14 +15,6 @@ namespace FrutosElqui.Escritorio
             _context = context;
             InitializeComponent();
         }
-
-        private async void button1_Click(object sender, System.EventArgs e)
-        {
-            var bancos = await Mediator.Send(new ListaDeBancos.Query());
-            foreach (var banco in bancos)
-            {
-                MessageBox.Show(this,banco.NombreBanco,"El banco",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
-        }
+        
     }
 }
