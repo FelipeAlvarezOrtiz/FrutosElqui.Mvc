@@ -39,6 +39,8 @@ namespace FrutosElqui.Escritorio
             this.OfertasImage = new System.Windows.Forms.PictureBox();
             this.OfertasLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.IngresoInventarioLabel = new System.Windows.Forms.Label();
+            this.IngresoInventarioImage = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ProductosLabel = new System.Windows.Forms.Label();
             this.ProductosImage = new System.Windows.Forms.PictureBox();
@@ -48,22 +50,32 @@ namespace FrutosElqui.Escritorio
             this.ventasDineroGroupBox = new System.Windows.Forms.GroupBox();
             this.VentasDineroLayout = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.NuevaVentaImage = new System.Windows.Forms.PictureBox();
+            this.NuevaVentaLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.IngresoImage = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.EgresoDineroImage = new System.Windows.Forms.PictureBox();
+            this.EgresoDineroLabel = new System.Windows.Forms.Label();
             this.informesGroupBox = new System.Windows.Forms.GroupBox();
             this.InformesReportesLayout = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.ReporteVentasLabel = new System.Windows.Forms.Label();
+            this.ReporteVentasImage = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ProveedoresVentasImage = new System.Windows.Forms.PictureBox();
             this.AdminGroupBox = new System.Windows.Forms.GroupBox();
             this.AdministracionLayout = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
+            this.CuentasImage = new System.Windows.Forms.PictureBox();
+            this.CuentasLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserLayout = new System.Windows.Forms.TableLayoutPanel();
@@ -73,24 +85,21 @@ namespace FrutosElqui.Escritorio
             this.SalirButton = new System.Windows.Forms.Button();
             this.NuevoUsuarioButton = new System.Windows.Forms.Button();
             this.CotizacionesGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.CotizacionesImage = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.EgresoDineroImage = new System.Windows.Forms.PictureBox();
-            this.EgresoDineroLabel = new System.Windows.Forms.Label();
-            this.NuevaVentaImage = new System.Windows.Forms.PictureBox();
-            this.NuevaVentaLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.CuentasImage = new System.Windows.Forms.PictureBox();
-            this.CuentasLabel = new System.Windows.Forms.Label();
-            this.ReporteVentasLabel = new System.Windows.Forms.Label();
-            this.ReporteVentasImage = new System.Windows.Forms.PictureBox();
             this.mainLayout.SuspendLayout();
             this.opcionesLayout.SuspendLayout();
             this.productosOfertasGroupBox.SuspendLayout();
             this.ProductosContentLayout.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OfertasImage)).BeginInit();
+            this.tableLayoutPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IngresoInventarioImage)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosImage)).BeginInit();
             this.inventarioLayout.SuspendLayout();
@@ -98,23 +107,28 @@ namespace FrutosElqui.Escritorio
             this.ventasDineroGroupBox.SuspendLayout();
             this.VentasDineroLayout.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NuevaVentaImage)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IngresoImage)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EgresoDineroImage)).BeginInit();
             this.informesGroupBox.SuspendLayout();
             this.InformesReportesLayout.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReporteVentasImage)).BeginInit();
+            this.tableLayoutPanel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProveedoresVentasImage)).BeginInit();
             this.AdminGroupBox.SuspendLayout();
             this.AdministracionLayout.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CuentasImage)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.UserLayout.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.CotizacionesGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EgresoDineroImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NuevaVentaImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CuentasImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReporteVentasImage)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CotizacionesImage)).BeginInit();
             this.SuspendLayout();
             // 
             // mainLayout
@@ -224,6 +238,8 @@ namespace FrutosElqui.Escritorio
             // 
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Controls.Add(this.IngresoInventarioLabel, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.IngresoInventarioImage, 0, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(771, 3);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -232,6 +248,28 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel11.Size = new System.Drawing.Size(252, 195);
             this.tableLayoutPanel11.TabIndex = 3;
+            // 
+            // IngresoInventarioLabel
+            // 
+            this.IngresoInventarioLabel.AutoSize = true;
+            this.IngresoInventarioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IngresoInventarioLabel.Location = new System.Drawing.Point(3, 156);
+            this.IngresoInventarioLabel.Name = "IngresoInventarioLabel";
+            this.IngresoInventarioLabel.Size = new System.Drawing.Size(246, 39);
+            this.IngresoInventarioLabel.TabIndex = 2;
+            this.IngresoInventarioLabel.Text = "Ingreso inventario";
+            this.IngresoInventarioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // IngresoInventarioImage
+            // 
+            this.IngresoInventarioImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IngresoInventarioImage.Image = ((System.Drawing.Image)(resources.GetObject("IngresoInventarioImage.Image")));
+            this.IngresoInventarioImage.Location = new System.Drawing.Point(3, 3);
+            this.IngresoInventarioImage.Name = "IngresoInventarioImage";
+            this.IngresoInventarioImage.Size = new System.Drawing.Size(246, 150);
+            this.IngresoInventarioImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.IngresoInventarioImage.TabIndex = 0;
+            this.IngresoInventarioImage.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
@@ -269,6 +307,7 @@ namespace FrutosElqui.Escritorio
             this.ProductosImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ProductosImage.TabIndex = 1;
             this.ProductosImage.TabStop = false;
+            this.ProductosImage.Click += new System.EventHandler(this.ProductosClick);
             // 
             // inventarioLayout
             // 
@@ -353,6 +392,29 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel10.Size = new System.Drawing.Size(250, 195);
             this.tableLayoutPanel10.TabIndex = 4;
             // 
+            // NuevaVentaImage
+            // 
+            this.NuevaVentaImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NuevaVentaImage.Image = ((System.Drawing.Image)(resources.GetObject("NuevaVentaImage.Image")));
+            this.NuevaVentaImage.Location = new System.Drawing.Point(3, 3);
+            this.NuevaVentaImage.Name = "NuevaVentaImage";
+            this.NuevaVentaImage.Size = new System.Drawing.Size(244, 150);
+            this.NuevaVentaImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.NuevaVentaImage.TabIndex = 0;
+            this.NuevaVentaImage.TabStop = false;
+            this.NuevaVentaImage.Click += new System.EventHandler(this.NuevaVentaClick);
+            // 
+            // NuevaVentaLabel
+            // 
+            this.NuevaVentaLabel.AutoSize = true;
+            this.NuevaVentaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NuevaVentaLabel.Location = new System.Drawing.Point(3, 156);
+            this.NuevaVentaLabel.Name = "NuevaVentaLabel";
+            this.NuevaVentaLabel.Size = new System.Drawing.Size(244, 39);
+            this.NuevaVentaLabel.TabIndex = 1;
+            this.NuevaVentaLabel.Text = "Nueva venta";
+            this.NuevaVentaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 1;
@@ -417,6 +479,28 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(250, 195);
             this.tableLayoutPanel7.TabIndex = 1;
+            // 
+            // EgresoDineroImage
+            // 
+            this.EgresoDineroImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EgresoDineroImage.Image = ((System.Drawing.Image)(resources.GetObject("EgresoDineroImage.Image")));
+            this.EgresoDineroImage.Location = new System.Drawing.Point(3, 3);
+            this.EgresoDineroImage.Name = "EgresoDineroImage";
+            this.EgresoDineroImage.Size = new System.Drawing.Size(244, 150);
+            this.EgresoDineroImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.EgresoDineroImage.TabIndex = 0;
+            this.EgresoDineroImage.TabStop = false;
+            // 
+            // EgresoDineroLabel
+            // 
+            this.EgresoDineroLabel.AutoSize = true;
+            this.EgresoDineroLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EgresoDineroLabel.Location = new System.Drawing.Point(3, 156);
+            this.EgresoDineroLabel.Name = "EgresoDineroLabel";
+            this.EgresoDineroLabel.Size = new System.Drawing.Size(244, 39);
+            this.EgresoDineroLabel.TabIndex = 1;
+            this.EgresoDineroLabel.Text = "Egreso de dinero";
+            this.EgresoDineroLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // informesGroupBox
             // 
@@ -490,10 +574,34 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel16.Size = new System.Drawing.Size(250, 195);
             this.tableLayoutPanel16.TabIndex = 2;
             // 
+            // ReporteVentasLabel
+            // 
+            this.ReporteVentasLabel.AutoSize = true;
+            this.ReporteVentasLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReporteVentasLabel.Location = new System.Drawing.Point(3, 156);
+            this.ReporteVentasLabel.Name = "ReporteVentasLabel";
+            this.ReporteVentasLabel.Size = new System.Drawing.Size(244, 39);
+            this.ReporteVentasLabel.TabIndex = 0;
+            this.ReporteVentasLabel.Text = "Reporte de ventas";
+            this.ReporteVentasLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ReporteVentasImage
+            // 
+            this.ReporteVentasImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReporteVentasImage.Image = ((System.Drawing.Image)(resources.GetObject("ReporteVentasImage.Image")));
+            this.ReporteVentasImage.Location = new System.Drawing.Point(3, 3);
+            this.ReporteVentasImage.Name = "ReporteVentasImage";
+            this.ReporteVentasImage.Size = new System.Drawing.Size(244, 150);
+            this.ReporteVentasImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ReporteVentasImage.TabIndex = 1;
+            this.ReporteVentasImage.TabStop = false;
+            // 
             // tableLayoutPanel17
             // 
             this.tableLayoutPanel17.ColumnCount = 1;
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel17.Controls.Add(this.label4, 0, 1);
+            this.tableLayoutPanel17.Controls.Add(this.ProveedoresVentasImage, 0, 0);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(259, 3);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
@@ -502,6 +610,28 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel17.Size = new System.Drawing.Size(250, 195);
             this.tableLayoutPanel17.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(3, 156);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(244, 39);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Ventas proveedores";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ProveedoresVentasImage
+            // 
+            this.ProveedoresVentasImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProveedoresVentasImage.Image = ((System.Drawing.Image)(resources.GetObject("ProveedoresVentasImage.Image")));
+            this.ProveedoresVentasImage.Location = new System.Drawing.Point(3, 3);
+            this.ProveedoresVentasImage.Name = "ProveedoresVentasImage";
+            this.ProveedoresVentasImage.Size = new System.Drawing.Size(244, 150);
+            this.ProveedoresVentasImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ProveedoresVentasImage.TabIndex = 0;
+            this.ProveedoresVentasImage.TabStop = false;
             // 
             // AdminGroupBox
             // 
@@ -575,6 +705,28 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel21.Size = new System.Drawing.Size(250, 195);
             this.tableLayoutPanel21.TabIndex = 2;
             // 
+            // CuentasImage
+            // 
+            this.CuentasImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CuentasImage.Image = ((System.Drawing.Image)(resources.GetObject("CuentasImage.Image")));
+            this.CuentasImage.Location = new System.Drawing.Point(3, 3);
+            this.CuentasImage.Name = "CuentasImage";
+            this.CuentasImage.Size = new System.Drawing.Size(244, 150);
+            this.CuentasImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CuentasImage.TabIndex = 0;
+            this.CuentasImage.TabStop = false;
+            // 
+            // CuentasLabel
+            // 
+            this.CuentasLabel.AutoSize = true;
+            this.CuentasLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CuentasLabel.Location = new System.Drawing.Point(3, 156);
+            this.CuentasLabel.Name = "CuentasLabel";
+            this.CuentasLabel.Size = new System.Drawing.Size(244, 39);
+            this.CuentasLabel.TabIndex = 1;
+            this.CuentasLabel.Text = "Cuentas";
+            this.CuentasLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel22
             // 
             this.tableLayoutPanel22.ColumnCount = 1;
@@ -630,7 +782,7 @@ namespace FrutosElqui.Escritorio
             this.UserNameText.Name = "UserNameText";
             this.UserNameText.Size = new System.Drawing.Size(196, 39);
             this.UserNameText.TabIndex = 3;
-            this.UserNameText.Text = "usuariologeado";
+            this.UserNameText.Text = "Antu Olmos";
             this.UserNameText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -694,7 +846,57 @@ namespace FrutosElqui.Escritorio
             this.CotizacionesGroupBox.Size = new System.Drawing.Size(336, 687);
             this.CotizacionesGroupBox.TabIndex = 3;
             this.CotizacionesGroupBox.TabStop = false;
-            this.CotizacionesGroupBox.Text = "Cotizaciones";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel13, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 35);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(330, 649);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.Controls.Add(this.CotizacionesImage, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 2;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(324, 318);
+            this.tableLayoutPanel13.TabIndex = 3;
+            // 
+            // CotizacionesImage
+            // 
+            this.CotizacionesImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CotizacionesImage.Image = ((System.Drawing.Image)(resources.GetObject("CotizacionesImage.Image")));
+            this.CotizacionesImage.Location = new System.Drawing.Point(3, 3);
+            this.CotizacionesImage.Name = "CotizacionesImage";
+            this.CotizacionesImage.Size = new System.Drawing.Size(318, 248);
+            this.CotizacionesImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CotizacionesImage.TabIndex = 0;
+            this.CotizacionesImage.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(3, 254);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(318, 64);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Cotizaciones";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel6
             // 
@@ -727,109 +929,6 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel9.Size = new System.Drawing.Size(200, 100);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
-            // EgresoDineroImage
-            // 
-            this.EgresoDineroImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EgresoDineroImage.Image = ((System.Drawing.Image)(resources.GetObject("EgresoDineroImage.Image")));
-            this.EgresoDineroImage.Location = new System.Drawing.Point(3, 3);
-            this.EgresoDineroImage.Name = "EgresoDineroImage";
-            this.EgresoDineroImage.Size = new System.Drawing.Size(244, 150);
-            this.EgresoDineroImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.EgresoDineroImage.TabIndex = 0;
-            this.EgresoDineroImage.TabStop = false;
-            // 
-            // EgresoDineroLabel
-            // 
-            this.EgresoDineroLabel.AutoSize = true;
-            this.EgresoDineroLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EgresoDineroLabel.Location = new System.Drawing.Point(3, 156);
-            this.EgresoDineroLabel.Name = "EgresoDineroLabel";
-            this.EgresoDineroLabel.Size = new System.Drawing.Size(244, 39);
-            this.EgresoDineroLabel.TabIndex = 1;
-            this.EgresoDineroLabel.Text = "Egreso de dinero";
-            this.EgresoDineroLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // NuevaVentaImage
-            // 
-            this.NuevaVentaImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NuevaVentaImage.Image = ((System.Drawing.Image)(resources.GetObject("NuevaVentaImage.Image")));
-            this.NuevaVentaImage.Location = new System.Drawing.Point(3, 3);
-            this.NuevaVentaImage.Name = "NuevaVentaImage";
-            this.NuevaVentaImage.Size = new System.Drawing.Size(244, 150);
-            this.NuevaVentaImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.NuevaVentaImage.TabIndex = 0;
-            this.NuevaVentaImage.TabStop = false;
-            // 
-            // NuevaVentaLabel
-            // 
-            this.NuevaVentaLabel.AutoSize = true;
-            this.NuevaVentaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NuevaVentaLabel.Location = new System.Drawing.Point(3, 156);
-            this.NuevaVentaLabel.Name = "NuevaVentaLabel";
-            this.NuevaVentaLabel.Size = new System.Drawing.Size(244, 39);
-            this.NuevaVentaLabel.TabIndex = 1;
-            this.NuevaVentaLabel.Text = "Nueva venta";
-            this.NuevaVentaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 35);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(330, 649);
-            this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // CuentasImage
-            // 
-            this.CuentasImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CuentasImage.Image = ((System.Drawing.Image)(resources.GetObject("CuentasImage.Image")));
-            this.CuentasImage.Location = new System.Drawing.Point(3, 3);
-            this.CuentasImage.Name = "CuentasImage";
-            this.CuentasImage.Size = new System.Drawing.Size(244, 150);
-            this.CuentasImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CuentasImage.TabIndex = 0;
-            this.CuentasImage.TabStop = false;
-            // 
-            // CuentasLabel
-            // 
-            this.CuentasLabel.AutoSize = true;
-            this.CuentasLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CuentasLabel.Location = new System.Drawing.Point(3, 156);
-            this.CuentasLabel.Name = "CuentasLabel";
-            this.CuentasLabel.Size = new System.Drawing.Size(244, 39);
-            this.CuentasLabel.TabIndex = 1;
-            this.CuentasLabel.Text = "Cuentas";
-            this.CuentasLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ReporteVentasLabel
-            // 
-            this.ReporteVentasLabel.AutoSize = true;
-            this.ReporteVentasLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReporteVentasLabel.Location = new System.Drawing.Point(3, 156);
-            this.ReporteVentasLabel.Name = "ReporteVentasLabel";
-            this.ReporteVentasLabel.Size = new System.Drawing.Size(244, 39);
-            this.ReporteVentasLabel.TabIndex = 0;
-            this.ReporteVentasLabel.Text = "Reporte de ventas";
-            this.ReporteVentasLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ReporteVentasImage
-            // 
-            this.ReporteVentasImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReporteVentasImage.Image = ((System.Drawing.Image)(resources.GetObject("ReporteVentasImage.Image")));
-            this.ReporteVentasImage.Location = new System.Drawing.Point(3, 3);
-            this.ReporteVentasImage.Name = "ReporteVentasImage";
-            this.ReporteVentasImage.Size = new System.Drawing.Size(244, 150);
-            this.ReporteVentasImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ReporteVentasImage.TabIndex = 1;
-            this.ReporteVentasImage.TabStop = false;
-            // 
             // MainFrame
             // 
             this.BackColor = System.Drawing.SystemColors.Window;
@@ -846,6 +945,9 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OfertasImage)).EndInit();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IngresoInventarioImage)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosImage)).EndInit();
@@ -856,28 +958,35 @@ namespace FrutosElqui.Escritorio
             this.VentasDineroLayout.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NuevaVentaImage)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IngresoImage)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EgresoDineroImage)).EndInit();
             this.informesGroupBox.ResumeLayout(false);
             this.InformesReportesLayout.ResumeLayout(false);
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReporteVentasImage)).EndInit();
+            this.tableLayoutPanel17.ResumeLayout(false);
+            this.tableLayoutPanel17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProveedoresVentasImage)).EndInit();
             this.AdminGroupBox.ResumeLayout(false);
             this.AdministracionLayout.ResumeLayout(false);
             this.tableLayoutPanel21.ResumeLayout(false);
             this.tableLayoutPanel21.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CuentasImage)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.UserLayout.ResumeLayout(false);
             this.UserLayout.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.CotizacionesGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.EgresoDineroImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NuevaVentaImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CuentasImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReporteVentasImage)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CotizacionesImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -938,5 +1047,12 @@ namespace FrutosElqui.Escritorio
         private System.Windows.Forms.Label CuentasLabel;
         private System.Windows.Forms.Label ReporteVentasLabel;
         private System.Windows.Forms.PictureBox ReporteVentasImage;
+        private System.Windows.Forms.Label IngresoInventarioLabel;
+        private System.Windows.Forms.PictureBox IngresoInventarioImage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.PictureBox CotizacionesImage;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox ProveedoresVentasImage;
     }
 }

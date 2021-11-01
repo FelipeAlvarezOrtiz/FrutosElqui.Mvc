@@ -37,7 +37,7 @@ namespace FrutosElqui.Mvc.Controllers
         }
 
         [HttpPost("CrearNuevoProducto"),Authorize(Roles = "Administrador")]
-        public async Task<ActionResult<Unit>> CrearNuevoProducto(CrearProducto.Command request)
+        public async Task<ActionResult<Unit>> CrearNuevoProducto(NuevoProducto.Command request)
         {
             try
             {

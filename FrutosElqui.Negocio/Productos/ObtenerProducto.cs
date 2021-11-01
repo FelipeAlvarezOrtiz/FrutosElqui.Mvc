@@ -1,9 +1,10 @@
-﻿using System;
+﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using FrutosElqui.Core.Productos;
 using FrutosElqui.Persistencia;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace FrutosElqui.Negocio.Productos
 {
@@ -26,8 +27,11 @@ namespace FrutosElqui.Negocio.Productos
             public async Task<Producto> Handle(Query request, CancellationToken cancellationToken)
             {
                 if (await _context.Productos.FindAsync(request.IdProducto) is null)
-                    throw new Exception("No existen datos para el producto buscado.");
-                return await _context.Productos.FindAsync(request.IdProducto);
+                    return null;
+                return await _context.Productos.Where(producto => producto.IdProducto == request.IdProducto)
+                    .Include(producto => producto.CategoriaProducto)
+                    .Include(producto => producto.MedidaProducto)
+                    .Include(producto => producto.SaborProducto).FirstOrDefaultAsync(cancellationToken);
             }
         }
     }

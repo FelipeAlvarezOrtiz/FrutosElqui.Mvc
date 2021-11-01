@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using FrutosElqui.Escritorio.Formularios;
 using FrutosElqui.Persistencia;
 using MediatR;
 
@@ -9,6 +10,7 @@ namespace FrutosElqui.Escritorio
     {
         protected IMediator Mediator;
         private readonly ApplicationDbContext _context;
+        private int rutUsuario = 18823970;
 
         public MainFrame(IMediator mediator, ApplicationDbContext context)
         {
@@ -16,7 +18,16 @@ namespace FrutosElqui.Escritorio
             _context = context;
             InitializeComponent();
         }
-        
+
+        private void NuevaVentaClick(object sender, EventArgs e)
+        {
+            new NuevaVenta(rutUsuario,Mediator,_context).Show(this);
+        }
+
+        private void ProductosClick(object sender, EventArgs e)
+        {
+            new Productos(ref this.Mediator).Show();
+        }
     }
 
 }
