@@ -3,8 +3,10 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.IO;
 using System.Windows.Forms;
+using FrutosElqui.Core.Usuarios;
 using FrutosElqui.Negocio.Misc.Bancos;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,7 +30,7 @@ namespace FrutosElqui.Escritorio
                 Application.SetHighDpiMode(HighDpiMode.SystemAware);
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                var frm = services.GetRequiredService<MainFrame>();
+                var frm = services.GetRequiredService<Login>();
                 Application.Run(frm);
             }
             catch (Exception exception)
@@ -62,8 +64,16 @@ namespace FrutosElqui.Escritorio
                         optionsBuilders.MigrationsAssembly("FrutosElqui.Persistencia");
                         optionsBuilders.EnableRetryOnFailure(10);
                     }));
+            services.AddDefaultIdentity<AppUser>(options => {
+                options.SignIn.RequireConfirmedAccount = false;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Lockout.MaxFailedAccessAttempts = 5;
+            }).AddRoles<IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddMediatR(typeof(ListaDeBancos.Handler));
-            services.AddScoped<MainFrame>();
+            services.AddScoped<Login>();
         }
+
     }
 }

@@ -80,7 +80,7 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserLayout = new System.Windows.Forms.TableLayoutPanel();
             this.UserNameText = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.UsuarioLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.SalirButton = new System.Windows.Forms.Button();
             this.NuevoUsuarioButton = new System.Windows.Forms.Button();
@@ -92,6 +92,8 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.CargoLabel = new System.Windows.Forms.Label();
+            this.Rol = new System.Windows.Forms.Label();
             this.mainLayout.SuspendLayout();
             this.opcionesLayout.SuspendLayout();
             this.productosOfertasGroupBox.SuspendLayout();
@@ -345,6 +347,7 @@ namespace FrutosElqui.Escritorio
             this.InventarioImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.InventarioImage.TabIndex = 1;
             this.InventarioImage.TabStop = false;
+            this.InventarioImage.Click += new System.EventHandler(this.InventariosClick);
             // 
             // ventasDineroGroupBox
             // 
@@ -762,8 +765,10 @@ namespace FrutosElqui.Escritorio
             this.UserLayout.ColumnCount = 2;
             this.UserLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.UserLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.UserLayout.Controls.Add(this.Rol, 0, 2);
+            this.UserLayout.Controls.Add(this.CargoLabel, 0, 2);
             this.UserLayout.Controls.Add(this.UserNameText, 1, 1);
-            this.UserLayout.Controls.Add(this.label1, 0, 1);
+            this.UserLayout.Controls.Add(this.UsuarioLabel, 0, 1);
             this.UserLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserLayout.Location = new System.Drawing.Point(3, 3);
             this.UserLayout.Name = "UserLayout";
@@ -782,19 +787,19 @@ namespace FrutosElqui.Escritorio
             this.UserNameText.Name = "UserNameText";
             this.UserNameText.Size = new System.Drawing.Size(196, 39);
             this.UserNameText.TabIndex = 3;
-            this.UserNameText.Text = "Antu Olmos";
+            this.UserNameText.Text = "-- nombre --";
             this.UserNameText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // UsuarioLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UsuarioLabel.AutoSize = true;
+            this.UsuarioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UsuarioLabel.Location = new System.Drawing.Point(3, 39);
+            this.UsuarioLabel.Name = "UsuarioLabel";
+            this.UsuarioLabel.Size = new System.Drawing.Size(128, 39);
+            this.UsuarioLabel.TabIndex = 0;
+            this.UsuarioLabel.Text = "Usuario";
+            this.UsuarioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -823,6 +828,7 @@ namespace FrutosElqui.Escritorio
             this.SalirButton.TabIndex = 1;
             this.SalirButton.Text = "Salir";
             this.SalirButton.UseVisualStyleBackColor = false;
+            this.SalirButton.Click += new System.EventHandler(this.SalirAppClick);
             // 
             // NuevoUsuarioButton
             // 
@@ -929,6 +935,28 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel9.Size = new System.Drawing.Size(200, 100);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
+            // CargoLabel
+            // 
+            this.CargoLabel.AutoSize = true;
+            this.CargoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CargoLabel.Location = new System.Drawing.Point(137, 78);
+            this.CargoLabel.Name = "CargoLabel";
+            this.CargoLabel.Size = new System.Drawing.Size(196, 41);
+            this.CargoLabel.TabIndex = 4;
+            this.CargoLabel.Text = "-- cargo --";
+            this.CargoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Rol
+            // 
+            this.Rol.AutoSize = true;
+            this.Rol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Rol.Location = new System.Drawing.Point(3, 78);
+            this.Rol.Name = "Rol";
+            this.Rol.Size = new System.Drawing.Size(128, 41);
+            this.Rol.TabIndex = 5;
+            this.Rol.Text = "Cargo";
+            this.Rol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainFrame
             // 
             this.BackColor = System.Drawing.SystemColors.Window;
@@ -1005,7 +1033,7 @@ namespace FrutosElqui.Escritorio
         private System.Windows.Forms.Button NuevoUsuarioButton;
         private System.Windows.Forms.TableLayoutPanel UserLayout;
         private System.Windows.Forms.Label UserNameText;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label UsuarioLabel;
         private System.Windows.Forms.GroupBox CotizacionesGroupBox;
         private System.Windows.Forms.TableLayoutPanel ProductosContentLayout;
         private System.Windows.Forms.TableLayoutPanel inventarioLayout;
@@ -1054,5 +1082,7 @@ namespace FrutosElqui.Escritorio
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox ProveedoresVentasImage;
+        private System.Windows.Forms.Label Rol;
+        private System.Windows.Forms.Label CargoLabel;
     }
 }

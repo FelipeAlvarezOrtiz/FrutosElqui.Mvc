@@ -63,8 +63,8 @@ namespace FrutosElqui.Escritorio.Formularios
             this.MainLayoutProductos.Location = new System.Drawing.Point(0, 0);
             this.MainLayoutProductos.Name = "MainLayoutProductos";
             this.MainLayoutProductos.RowCount = 3;
-            this.MainLayoutProductos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.77826F));
-            this.MainLayoutProductos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.15178F));
+            this.MainLayoutProductos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.56297F));
+            this.MainLayoutProductos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.36706F));
             this.MainLayoutProductos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.MainLayoutProductos.Size = new System.Drawing.Size(1214, 929);
             this.MainLayoutProductos.TabIndex = 0;
@@ -75,7 +75,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.OpcionesGroupbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OpcionesGroupbox.Location = new System.Drawing.Point(3, 3);
             this.OpcionesGroupbox.Name = "OpcionesGroupbox";
-            this.OpcionesGroupbox.Size = new System.Drawing.Size(1208, 122);
+            this.OpcionesGroupbox.Size = new System.Drawing.Size(1208, 120);
             this.OpcionesGroupbox.TabIndex = 0;
             this.OpcionesGroupbox.TabStop = false;
             this.OpcionesGroupbox.Text = "Opciones";
@@ -94,7 +94,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1202, 84);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1202, 82);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // BusquedaAvanzadaLabel
@@ -103,7 +103,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.BusquedaAvanzadaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BusquedaAvanzadaLabel.Location = new System.Drawing.Point(3, 0);
             this.BusquedaAvanzadaLabel.Name = "BusquedaAvanzadaLabel";
-            this.BusquedaAvanzadaLabel.Size = new System.Drawing.Size(394, 84);
+            this.BusquedaAvanzadaLabel.Size = new System.Drawing.Size(394, 82);
             this.BusquedaAvanzadaLabel.TabIndex = 0;
             this.BusquedaAvanzadaLabel.Text = "Busqueda avanzada";
             this.BusquedaAvanzadaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -122,10 +122,11 @@ namespace FrutosElqui.Escritorio.Formularios
             this.BuscarButton.Location = new System.Drawing.Point(815, 15);
             this.BuscarButton.Margin = new System.Windows.Forms.Padding(15);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(372, 54);
+            this.BuscarButton.Size = new System.Drawing.Size(372, 52);
             this.BuscarButton.TabIndex = 2;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarProductoClick);
             // 
             // ProductosView
             // 
@@ -139,11 +140,11 @@ namespace FrutosElqui.Escritorio.Formularios
             this.Medida,
             this.Proveedor});
             this.ProductosView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductosView.Location = new System.Drawing.Point(3, 131);
+            this.ProductosView.Location = new System.Drawing.Point(3, 129);
             this.ProductosView.Name = "ProductosView";
             this.ProductosView.RowHeadersWidth = 82;
             this.ProductosView.RowTemplate.Height = 41;
-            this.ProductosView.Size = new System.Drawing.Size(1208, 655);
+            this.ProductosView.Size = new System.Drawing.Size(1208, 657);
             this.ProductosView.TabIndex = 1;
             // 
             // IdProducto

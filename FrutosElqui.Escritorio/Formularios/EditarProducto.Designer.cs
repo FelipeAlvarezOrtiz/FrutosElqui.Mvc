@@ -335,6 +335,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.UpdateButton.TabIndex = 1;
             this.UpdateButton.Text = "Actualizar";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.EditarProductoClick);
             // 
             // EditarProducto
             // 

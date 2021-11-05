@@ -68,5 +68,33 @@ namespace FrutosElqui.Escritorio.Formularios
                 Console.WriteLine(error.Message);
             }
         }
+
+        private async void BuscarProductoClick(object sender, EventArgs e)
+        {
+            var busquedaInput = BusquedaAvanzadaInput.Text;
+            if (string.IsNullOrEmpty(busquedaInput))
+            {
+                MessageBox.Show(this, "Debe escribir algo antes de buscar", "Información", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
+            var productos = await _mediator.Send(new BuscarProductosPorNombreBusqueda.Query{NombreBusqueda = busquedaInput});
+            if (productos.Count > 0)
+            {
+                ProductosView.Rows.Clear();
+                foreach (var producto in productos)
+                {
+                    ProductosView.Rows.Add(producto.IdProducto, producto.NombreProducto,
+                        producto.CategoriaProducto.NombreCategoria,
+                        producto.MedidaProducto.NombreMedida, producto.ProveedorProducto.NombreProveedor);
+                }
+                BusquedaAvanzadaInput.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show(this, "No existen productos para los criterios de búsqueda", "Información", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
     }
 }

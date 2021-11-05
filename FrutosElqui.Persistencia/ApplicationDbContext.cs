@@ -16,6 +16,14 @@ namespace FrutosElqui.Persistencia
         {
         }
 
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    builder.Entity<DetalleInventarios>(build =>
+        //    {
+        //        build.HasKey(table => new { table.IdProducto, table.IdSucursal });
+        //    });
+        //}
+
         public DbSet<AppUser> Usuarios { get; set; }
         public DbSet<Banco> Bancos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
@@ -37,5 +45,6 @@ namespace FrutosElqui.Persistencia
         public DbSet<EstadoCotizacion> EstadoCotizaciones { get; set; }
         public DbSet<Courrier> Courriers { get; set; }
         public DbSet<DetalleCotizacion> DetallesDeCotizaciones { get; set; }
+        public DbSet<DetalleInventarios> Inventarios { get; set; }
     }
 }
