@@ -46,5 +46,7 @@ namespace FrutosElqui.Persistencia
         public DbSet<Courrier> Courriers { get; set; }
         public DbSet<DetalleCotizacion> DetallesDeCotizaciones { get; set; }
         public DbSet<DetalleInventarios> Inventarios { get; set; }
+        public DbSet<IngresoDinero> IngresosDineros { get; set; }
+        public DbSet<EgresoDinero> EgresosDineros { get; set; }
     }
 }

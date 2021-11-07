@@ -13,13 +13,15 @@ namespace FrutosElqui.Escritorio
         private readonly UserManager<AppUser> _userManager;
         private readonly IMediator _mediator;
         private readonly ApplicationDbContext _context;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public Login(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, IMediator mediator, ApplicationDbContext context)
+        public Login(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, IMediator mediator, ApplicationDbContext context, RoleManager<IdentityRole> roleManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _mediator = mediator;
             _context = context;
+            _roleManager = roleManager;
             InitializeComponent();
         }
 
@@ -39,7 +41,8 @@ namespace FrutosElqui.Escritorio
             var signInResult = await _signInManager.CheckPasswordSignInAsync(user, PassInput.Text, false);
             if (signInResult.Succeeded)
             {
-                new MainFrame(this._mediator, _context, user,this).Show(this);
+                new MainFrame(this._mediator, _context, user,this,this._roleManager,_userManager).Show(this);
+                PassInput.Text = string.Empty;
                 this.Hide();
             }
             else

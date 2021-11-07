@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using FrutosElqui.Core.Misc;
 using Microsoft.AspNetCore.Identity;
 
 namespace FrutosElqui.Core.Usuarios
@@ -13,5 +14,7 @@ namespace FrutosElqui.Core.Usuarios
         public string Rut { get; set; }
         [MaxLength(100), Required]
         public string Nombre { get; set; }
+        public Region RegionUsuario { get; set; }
+        public Comuna ComunaUsuario { get; set; }
     }
 }

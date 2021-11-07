@@ -79,6 +79,8 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.Rol = new System.Windows.Forms.Label();
+            this.CargoLabel = new System.Windows.Forms.Label();
             this.UserNameText = new System.Windows.Forms.Label();
             this.UsuarioLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -92,8 +94,6 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.CargoLabel = new System.Windows.Forms.Label();
-            this.Rol = new System.Windows.Forms.Label();
             this.mainLayout.SuspendLayout();
             this.opcionesLayout.SuspendLayout();
             this.productosOfertasGroupBox.SuspendLayout();
@@ -456,6 +456,7 @@ namespace FrutosElqui.Escritorio
             this.IngresoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.IngresoImage.TabIndex = 0;
             this.IngresoImage.TabStop = false;
+            this.IngresoImage.Click += new System.EventHandler(this.IngresoDinero_Click);
             // 
             // label2
             // 
@@ -779,6 +780,28 @@ namespace FrutosElqui.Escritorio
             this.UserLayout.Size = new System.Drawing.Size(336, 119);
             this.UserLayout.TabIndex = 2;
             // 
+            // Rol
+            // 
+            this.Rol.AutoSize = true;
+            this.Rol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Rol.Location = new System.Drawing.Point(3, 78);
+            this.Rol.Name = "Rol";
+            this.Rol.Size = new System.Drawing.Size(128, 41);
+            this.Rol.TabIndex = 5;
+            this.Rol.Text = "Cargo";
+            this.Rol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CargoLabel
+            // 
+            this.CargoLabel.AutoSize = true;
+            this.CargoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CargoLabel.Location = new System.Drawing.Point(137, 78);
+            this.CargoLabel.Name = "CargoLabel";
+            this.CargoLabel.Size = new System.Drawing.Size(196, 41);
+            this.CargoLabel.TabIndex = 4;
+            this.CargoLabel.Text = "-- cargo --";
+            this.CargoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UserNameText
             // 
             this.UserNameText.AutoSize = true;
@@ -842,6 +865,7 @@ namespace FrutosElqui.Escritorio
             this.NuevoUsuarioButton.TabIndex = 0;
             this.NuevoUsuarioButton.Text = "Nuevo usuario";
             this.NuevoUsuarioButton.UseVisualStyleBackColor = false;
+            this.NuevoUsuarioButton.Click += new System.EventHandler(this.CrearNuevoUsuarioClick);
             // 
             // CotizacionesGroupBox
             // 
@@ -935,28 +959,6 @@ namespace FrutosElqui.Escritorio
             this.tableLayoutPanel9.Size = new System.Drawing.Size(200, 100);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
-            // CargoLabel
-            // 
-            this.CargoLabel.AutoSize = true;
-            this.CargoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CargoLabel.Location = new System.Drawing.Point(137, 78);
-            this.CargoLabel.Name = "CargoLabel";
-            this.CargoLabel.Size = new System.Drawing.Size(196, 41);
-            this.CargoLabel.TabIndex = 4;
-            this.CargoLabel.Text = "-- cargo --";
-            this.CargoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Rol
-            // 
-            this.Rol.AutoSize = true;
-            this.Rol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Rol.Location = new System.Drawing.Point(3, 78);
-            this.Rol.Name = "Rol";
-            this.Rol.Size = new System.Drawing.Size(128, 41);
-            this.Rol.TabIndex = 5;
-            this.Rol.Text = "Cargo";
-            this.Rol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MainFrame
             // 
             this.BackColor = System.Drawing.SystemColors.Window;
@@ -966,6 +968,7 @@ namespace FrutosElqui.Escritorio
             this.Name = "MainFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frutos de elqui";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AbrirLoginClosing);
             this.mainLayout.ResumeLayout(false);
             this.opcionesLayout.ResumeLayout(false);
             this.productosOfertasGroupBox.ResumeLayout(false);

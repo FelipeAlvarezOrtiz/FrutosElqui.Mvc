@@ -35,10 +35,10 @@ namespace FrutosElqui.Escritorio
             this.SalirButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
             this.DatosLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.PassInput = new System.Windows.Forms.TextBox();
             this.UsuarioLabel = new System.Windows.Forms.Label();
             this.PassLabel = new System.Windows.Forms.Label();
             this.EmailTextbox = new System.Windows.Forms.TextBox();
-            this.PassInput = new System.Windows.Forms.TextBox();
             this.imagenLayout = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainLayout.SuspendLayout();
@@ -76,11 +76,11 @@ namespace FrutosElqui.Escritorio
             this.ButtonsLayout.Controls.Add(this.SalirButton, 1, 0);
             this.ButtonsLayout.Controls.Add(this.LoginButton, 3, 0);
             this.ButtonsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonsLayout.Location = new System.Drawing.Point(3, 592);
+            this.ButtonsLayout.Location = new System.Drawing.Point(3, 591);
             this.ButtonsLayout.Name = "ButtonsLayout";
             this.ButtonsLayout.RowCount = 1;
             this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ButtonsLayout.Size = new System.Drawing.Size(614, 76);
+            this.ButtonsLayout.Size = new System.Drawing.Size(614, 77);
             this.ButtonsLayout.TabIndex = 0;
             // 
             // SalirButton
@@ -88,7 +88,7 @@ namespace FrutosElqui.Escritorio
             this.SalirButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SalirButton.Location = new System.Drawing.Point(64, 3);
             this.SalirButton.Name = "SalirButton";
-            this.SalirButton.Size = new System.Drawing.Size(208, 70);
+            this.SalirButton.Size = new System.Drawing.Size(208, 71);
             this.SalirButton.TabIndex = 0;
             this.SalirButton.Text = "Salir";
             this.SalirButton.UseVisualStyleBackColor = true;
@@ -99,7 +99,7 @@ namespace FrutosElqui.Escritorio
             this.LoginButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoginButton.Location = new System.Drawing.Point(339, 3);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(208, 70);
+            this.LoginButton.Size = new System.Drawing.Size(208, 71);
             this.LoginButton.TabIndex = 1;
             this.LoginButton.Text = "Ingresar";
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -115,13 +115,23 @@ namespace FrutosElqui.Escritorio
             this.DatosLayout.Controls.Add(this.PassLabel, 0, 1);
             this.DatosLayout.Controls.Add(this.EmailTextbox, 1, 0);
             this.DatosLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DatosLayout.Location = new System.Drawing.Point(3, 479);
+            this.DatosLayout.Location = new System.Drawing.Point(3, 478);
             this.DatosLayout.Name = "DatosLayout";
             this.DatosLayout.RowCount = 2;
             this.DatosLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.DatosLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.DatosLayout.Size = new System.Drawing.Size(614, 107);
             this.DatosLayout.TabIndex = 1;
+            // 
+            // PassInput
+            // 
+            this.PassInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PassInput.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PassInput.Location = new System.Drawing.Point(248, 56);
+            this.PassInput.Name = "PassInput";
+            this.PassInput.PasswordChar = '*';
+            this.PassInput.Size = new System.Drawing.Size(363, 46);
+            this.PassInput.TabIndex = 3;
             // 
             // UsuarioLabel
             // 
@@ -154,16 +164,6 @@ namespace FrutosElqui.Escritorio
             this.EmailTextbox.Size = new System.Drawing.Size(363, 46);
             this.EmailTextbox.TabIndex = 2;
             // 
-            // PassInput
-            // 
-            this.PassInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PassInput.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PassInput.Location = new System.Drawing.Point(248, 56);
-            this.PassInput.Name = "PassInput";
-            this.PassInput.PasswordChar = '*';
-            this.PassInput.Size = new System.Drawing.Size(363, 46);
-            this.PassInput.TabIndex = 3;
-            // 
             // imagenLayout
             // 
             this.imagenLayout.ColumnCount = 3;
@@ -178,7 +178,7 @@ namespace FrutosElqui.Escritorio
             this.imagenLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.imagenLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.imagenLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.imagenLayout.Size = new System.Drawing.Size(614, 470);
+            this.imagenLayout.Size = new System.Drawing.Size(614, 469);
             this.imagenLayout.TabIndex = 2;
             // 
             // pictureBox1
@@ -187,7 +187,7 @@ namespace FrutosElqui.Escritorio
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(33, 26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(546, 417);
+            this.pictureBox1.Size = new System.Drawing.Size(546, 416);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;

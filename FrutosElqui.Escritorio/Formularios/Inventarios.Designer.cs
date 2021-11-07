@@ -43,7 +43,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SucursalLabel = new System.Windows.Forms.Label();
             this.SucursalesCombo = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BuscarProductosDeInventarioButton = new System.Windows.Forms.Button();
             this.OpcionesLayout = new System.Windows.Forms.TableLayoutPanel();
             this.IngresarProductoButton = new System.Windows.Forms.Button();
             this.RefrescarButton = new System.Windows.Forms.Button();
@@ -99,6 +99,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.CerrarButton.TabIndex = 0;
             this.CerrarButton.Text = "Cerrar";
             this.CerrarButton.UseVisualStyleBackColor = true;
+            this.CerrarButton.Click += new System.EventHandler(this.CerrarForm);
             // 
             // ProductosInventarioView
             // 
@@ -188,7 +189,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.SucursalLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.SucursalesCombo, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.BuscarProductosDeInventarioButton, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -218,15 +219,16 @@ namespace FrutosElqui.Escritorio.Formularios
             this.SucursalesCombo.Size = new System.Drawing.Size(522, 40);
             this.SucursalesCombo.TabIndex = 1;
             // 
-            // button1
+            // BuscarProductosDeInventarioButton
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(1059, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(524, 54);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BuscarProductosDeInventarioButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BuscarProductosDeInventarioButton.Location = new System.Drawing.Point(1059, 3);
+            this.BuscarProductosDeInventarioButton.Name = "BuscarProductosDeInventarioButton";
+            this.BuscarProductosDeInventarioButton.Size = new System.Drawing.Size(524, 54);
+            this.BuscarProductosDeInventarioButton.TabIndex = 2;
+            this.BuscarProductosDeInventarioButton.Text = "Buscar";
+            this.BuscarProductosDeInventarioButton.UseVisualStyleBackColor = true;
+            this.BuscarProductosDeInventarioButton.Click += new System.EventHandler(this.CargarProductosDeSucursal);
             // 
             // OpcionesLayout
             // 
@@ -255,6 +257,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.IngresarProductoButton.TabIndex = 0;
             this.IngresarProductoButton.Text = "Ingresar producto";
             this.IngresarProductoButton.UseVisualStyleBackColor = true;
+            this.IngresarProductoButton.Click += new System.EventHandler(this.IngresarProductoClick);
             // 
             // RefrescarButton
             // 
@@ -295,7 +298,7 @@ namespace FrutosElqui.Escritorio.Formularios
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label SucursalLabel;
         private System.Windows.Forms.ComboBox SucursalesCombo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BuscarProductosDeInventarioButton;
         private System.Windows.Forms.TableLayoutPanel OpcionesLayout;
         private System.Windows.Forms.TableLayoutPanel MainOpcionesLayout;
         private System.Windows.Forms.Button CerrarButton;

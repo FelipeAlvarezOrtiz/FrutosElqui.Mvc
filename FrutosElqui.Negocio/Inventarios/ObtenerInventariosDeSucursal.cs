@@ -34,8 +34,14 @@ namespace FrutosElqui.Negocio.Inventarios
                 var sucursal = await _mediator.Send(new ObtenerSucursal.Query { IdSucursal = request.IdSucursal });
                 if (sucursal is null) throw new Exception("Esa sucursal no existe");
                 return await _context.Inventarios.Include(inv => inv.Sucursal)
-                    .Where(inv => inv.Sucursal.IdSucursal == request.IdSucursal).Include(inv => inv.Producto)
-                    .ThenInclude(producto => producto.ProveedorProducto).ToListAsync(cancellationToken);
+                    .Where(inv => inv.Sucursal.IdSucursal == request.IdSucursal)
+                    .Include(inv => inv.Producto)
+                    .ThenInclude(producto => producto.ProveedorProducto)
+                    .Include(inv => inv.Producto)
+                    .ThenInclude(producto => producto.CategoriaProducto)
+                    .Include(inv => inv.Producto)
+                    .ThenInclude(producto => producto.MedidaProducto)
+                    .ToListAsync(cancellationToken);
             }
         }
     }

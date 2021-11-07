@@ -4,14 +4,16 @@ using FrutosElqui.Persistencia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FrutosElqui.Persistencia.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211106213427_CamposUsuario")]
+    partial class CamposUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -235,33 +237,6 @@ namespace FrutosElqui.Persistencia.Migrations
                     b.ToTable("DocumentosTributarios");
                 });
 
-            modelBuilder.Entity("FrutosElqui.Core.Misc.EgresoDinero", b =>
-                {
-                    b.Property<int>("IdEgreso")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CantidadEgresada")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FechaEgreso")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Observacion")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<int?>("SucursalOrigenIdSucursal")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdEgreso");
-
-                    b.HasIndex("SucursalOrigenIdSucursal");
-
-                    b.ToTable("EgresosDineros");
-                });
-
             modelBuilder.Entity("FrutosElqui.Core.Misc.Giro", b =>
                 {
                     b.Property<int>("IdGiro")
@@ -279,33 +254,6 @@ namespace FrutosElqui.Persistencia.Migrations
                     b.HasKey("IdGiro");
 
                     b.ToTable("Giros");
-                });
-
-            modelBuilder.Entity("FrutosElqui.Core.Misc.IngresoDinero", b =>
-                {
-                    b.Property<int>("IdIngreso")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CantidadIngresado")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FechaIngreso")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Observacion")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<int?>("SucursalOrigenIdSucursal")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdIngreso");
-
-                    b.HasIndex("SucursalOrigenIdSucursal");
-
-                    b.ToTable("IngresosDineros");
                 });
 
             modelBuilder.Entity("FrutosElqui.Core.Misc.Medida", b =>
@@ -860,24 +808,6 @@ namespace FrutosElqui.Persistencia.Migrations
                     b.Navigation("Producto");
 
                     b.Navigation("Sucursal");
-                });
-
-            modelBuilder.Entity("FrutosElqui.Core.Misc.EgresoDinero", b =>
-                {
-                    b.HasOne("FrutosElqui.Core.Misc.Sucursal", "SucursalOrigen")
-                        .WithMany()
-                        .HasForeignKey("SucursalOrigenIdSucursal");
-
-                    b.Navigation("SucursalOrigen");
-                });
-
-            modelBuilder.Entity("FrutosElqui.Core.Misc.IngresoDinero", b =>
-                {
-                    b.HasOne("FrutosElqui.Core.Misc.Sucursal", "SucursalOrigen")
-                        .WithMany()
-                        .HasForeignKey("SucursalOrigenIdSucursal");
-
-                    b.Navigation("SucursalOrigen");
                 });
 
             modelBuilder.Entity("FrutosElqui.Core.Misc.Sucursal", b =>

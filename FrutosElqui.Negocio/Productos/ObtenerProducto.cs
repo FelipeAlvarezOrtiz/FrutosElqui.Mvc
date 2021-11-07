@@ -31,7 +31,8 @@ namespace FrutosElqui.Negocio.Productos
                 return await _context.Productos.Where(producto => producto.IdProducto == request.IdProducto)
                     .Include(producto => producto.CategoriaProducto)
                     .Include(producto => producto.MedidaProducto)
-                    .Include(producto => producto.SaborProducto).FirstOrDefaultAsync(cancellationToken);
+                    .Include(producto => producto.SaborProducto)
+                    .Include(producto => producto.ProveedorProducto).FirstOrDefaultAsync(cancellationToken);
             }
         }
     }
