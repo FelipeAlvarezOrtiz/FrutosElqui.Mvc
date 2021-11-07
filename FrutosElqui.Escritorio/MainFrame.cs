@@ -17,6 +17,7 @@ namespace FrutosElqui.Escritorio
         private readonly Form loginForm;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<AppUser> _userManager;
+
         public MainFrame(IMediator mediator, ApplicationDbContext context, AppUser usuario,Form loginForm, RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager)
         {
             Mediator = mediator;
@@ -64,7 +65,7 @@ namespace FrutosElqui.Escritorio
 
         private void IngresoDinero_Click(object sender, EventArgs e)
         {
-            new IngresarIngresoDinero(Mediator).Show();
+            new IngresosDeDinero(Mediator).Show();
         }
 
         private void EgresoDineroClick(object sender,EventArgs e)

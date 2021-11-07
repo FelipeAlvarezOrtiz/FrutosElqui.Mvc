@@ -77,6 +77,7 @@ namespace FrutosElqui.Escritorio.Formularios
             // 
             // productoCanasta
             // 
+            this.productoCanasta.AllowUserToAddRows = false;
             this.productoCanasta.AllowUserToDeleteRows = false;
             this.productoCanasta.AllowUserToResizeColumns = false;
             this.productoCanasta.AllowUserToResizeRows = false;
@@ -90,6 +91,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.productoCanasta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productoCanasta.Location = new System.Drawing.Point(3, 135);
             this.productoCanasta.Name = "productoCanasta";
+            this.productoCanasta.RowHeadersVisible = false;
             this.productoCanasta.RowHeadersWidth = 82;
             this.productoCanasta.RowTemplate.Height = 41;
             this.productoCanasta.Size = new System.Drawing.Size(1543, 498);
@@ -101,7 +103,6 @@ namespace FrutosElqui.Escritorio.Formularios
             this.CodeID.HeaderText = "Codigo de Barra";
             this.CodeID.MinimumWidth = 200;
             this.CodeID.Name = "CodeID";
-            this.CodeID.ReadOnly = true;
             // 
             // NombreProducto
             // 
@@ -109,7 +110,6 @@ namespace FrutosElqui.Escritorio.Formularios
             this.NombreProducto.HeaderText = "Nombre de Producto";
             this.NombreProducto.MinimumWidth = 560;
             this.NombreProducto.Name = "NombreProducto";
-            this.NombreProducto.ReadOnly = true;
             // 
             // Cantidad
             // 
@@ -125,7 +125,6 @@ namespace FrutosElqui.Escritorio.Formularios
             this.Precio.MaxInputLength = 64000;
             this.Precio.MinimumWidth = 10;
             this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
             // 
             // cabeceraLayout
             // 
