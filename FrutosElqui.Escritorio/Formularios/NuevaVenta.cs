@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using FrutosElqui.Negocio.Productos;
 using FrutosElqui.Persistencia;
@@ -42,9 +43,17 @@ namespace FrutosElqui.Escritorio.Formularios
                         CodigoBarraInput.Focus();
                         return;
                     }
-                    Console.WriteLine(productoEncontrado.NombreBusqueda);
+                    productoCanasta.Rows.Add(productoEncontrado.IdProducto,
+                            productoEncontrado.NombreBusqueda,
+                            1,
+                            productoEncontrado.PrecioTotal.ToString("C0"));
                     CodigoBarraInput.Text = string.Empty;
                     CodigoBarraInput.Focus();
+                    var rows = productoCanasta.Rows;
+                    foreach (DataGridViewRow row in rows)
+                    {
+                        var test = row.Cells["CodeID"].Value.ToString();
+                    }
                 }
                 else
                 {

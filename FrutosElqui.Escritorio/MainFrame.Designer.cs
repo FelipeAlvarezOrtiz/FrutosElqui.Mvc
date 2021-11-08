@@ -494,6 +494,7 @@ namespace FrutosElqui.Escritorio
             this.EgresoDineroImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.EgresoDineroImage.TabIndex = 0;
             this.EgresoDineroImage.TabStop = false;
+            this.EgresoDineroImage.Click += new System.EventHandler(this.EgresosClick);
             // 
             // EgresoDineroLabel
             // 

@@ -44,7 +44,7 @@ namespace FrutosElqui.Escritorio
 
         private void InventariosClick(object sender, EventArgs e)
         {
-            new Inventarios(Mediator).Show();
+            new Inventarios(Mediator).Show(this);
         }
 
         private void SalirAppClick(object sender, EventArgs e)
@@ -60,17 +60,17 @@ namespace FrutosElqui.Escritorio
 
         private void CrearNuevoUsuarioClick(object sender, EventArgs e)
         {
-            new CrearUsuario(this._roleManager,this._userManager,this.Mediator).Show();
+            new CrearUsuario(this._roleManager,this._userManager,this.Mediator).Show(this);
         }
 
         private void IngresoDinero_Click(object sender, EventArgs e)
         {
-            new IngresosDeDinero(Mediator).Show();
+            new IngresosDeDinero(Mediator).Show(this);
         }
 
-        private void EgresoDineroClick(object sender,EventArgs e)
+        private void EgresosClick(object sender, EventArgs e)
         {
-
+            new EgresosDinero(Mediator).Show(this);
         }
     }
 

@@ -31,10 +31,6 @@ namespace FrutosElqui.Escritorio.Formularios
         {
             this.mainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.productoCanasta = new System.Windows.Forms.DataGridView();
-            this.CodeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cabeceraLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ConfiguracionVentaGroupBox = new System.Windows.Forms.GroupBox();
             this.configuracionVentaLayout = new System.Windows.Forms.TableLayoutPanel();
@@ -49,6 +45,10 @@ namespace FrutosElqui.Escritorio.Formularios
             this.ResetBuscador = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TotalVentaTextbox = new System.Windows.Forms.TextBox();
+            this.CodeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoCanasta)).BeginInit();
             this.cabeceraLayout.SuspendLayout();
@@ -96,35 +96,6 @@ namespace FrutosElqui.Escritorio.Formularios
             this.productoCanasta.RowTemplate.Height = 41;
             this.productoCanasta.Size = new System.Drawing.Size(1543, 498);
             this.productoCanasta.TabIndex = 0;
-            // 
-            // CodeID
-            // 
-            this.CodeID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CodeID.HeaderText = "Codigo de Barra";
-            this.CodeID.MinimumWidth = 200;
-            this.CodeID.Name = "CodeID";
-            // 
-            // NombreProducto
-            // 
-            this.NombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NombreProducto.HeaderText = "Nombre de Producto";
-            this.NombreProducto.MinimumWidth = 560;
-            this.NombreProducto.Name = "NombreProducto";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 10;
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Precio
-            // 
-            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MaxInputLength = 64000;
-            this.Precio.MinimumWidth = 10;
-            this.Precio.Name = "Precio";
             // 
             // cabeceraLayout
             // 
@@ -308,6 +279,38 @@ namespace FrutosElqui.Escritorio.Formularios
             this.TotalVentaTextbox.Size = new System.Drawing.Size(261, 39);
             this.TotalVentaTextbox.TabIndex = 3;
             this.TotalVentaTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CodeID
+            // 
+            this.CodeID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.CodeID.HeaderText = "Codigo de Barra";
+            this.CodeID.MinimumWidth = 200;
+            this.CodeID.Name = "CodeID";
+            this.CodeID.Width = 231;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NombreProducto.HeaderText = "Nombre de Producto";
+            this.NombreProducto.MinimumWidth = 560;
+            this.NombreProducto.Name = "NombreProducto";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 10;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 154;
+            // 
+            // Precio
+            // 
+            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MaxInputLength = 64000;
+            this.Precio.MinimumWidth = 10;
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 124;
             // 
             // NuevaVenta
             // 

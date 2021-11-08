@@ -299,7 +299,8 @@ namespace FrutosElqui.Escritorio.Formularios
             this.ClientSize = new System.Drawing.Size(1190, 515);
             this.Controls.Add(this.MainLayout);
             this.Name = "EgresosDinero";
-            this.Text = "EgresosDinero";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Egresos de dinero";
             this.Load += new System.EventHandler(this.CargaEgresosLoad);
             this.MainLayout.ResumeLayout(false);
             this.DAtaLayout.ResumeLayout(false);

@@ -4,14 +4,16 @@ using FrutosElqui.Persistencia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FrutosElqui.Persistencia.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211108001124_Ofertas")]
+    partial class Ofertas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -463,30 +465,6 @@ namespace FrutosElqui.Persistencia.Migrations
                     b.ToTable("TipoSucursales");
                 });
 
-            modelBuilder.Entity("FrutosElqui.Core.Ofertas.DetalleOferta", b =>
-                {
-                    b.Property<Guid>("GuidDetalle")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("CantidadProducto")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("OfertaGuidOferta")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int?>("ProductoIdProducto")
-                        .HasColumnType("int");
-
-                    b.HasKey("GuidDetalle");
-
-                    b.HasIndex("OfertaGuidOferta");
-
-                    b.HasIndex("ProductoIdProducto");
-
-                    b.ToTable("DetallesDeOfertas");
-                });
-
             modelBuilder.Entity("FrutosElqui.Core.Ofertas.Oferta", b =>
                 {
                     b.Property<Guid>("GuidOferta")
@@ -506,6 +484,31 @@ namespace FrutosElqui.Persistencia.Migrations
                     b.HasKey("GuidOferta");
 
                     b.ToTable("Ofertas");
+                });
+
+            modelBuilder.Entity("FrutosElqui.Core.Ofertas.OfertaDetalle", b =>
+                {
+                    b.Property<int>("GuidDetalle")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CantidadProducto")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("OfertaGuidOferta")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int?>("ProductoIdProducto")
+                        .HasColumnType("int");
+
+                    b.HasKey("GuidDetalle");
+
+                    b.HasIndex("OfertaGuidOferta");
+
+                    b.HasIndex("ProductoIdProducto");
+
+                    b.ToTable("DetallesOfertas");
                 });
 
             modelBuilder.Entity("FrutosElqui.Core.Productos.Producto", b =>
@@ -946,7 +949,7 @@ namespace FrutosElqui.Persistencia.Migrations
                     b.Navigation("TipoSucursal");
                 });
 
-            modelBuilder.Entity("FrutosElqui.Core.Ofertas.DetalleOferta", b =>
+            modelBuilder.Entity("FrutosElqui.Core.Ofertas.OfertaDetalle", b =>
                 {
                     b.HasOne("FrutosElqui.Core.Ofertas.Oferta", null)
                         .WithMany("ProductosEnOferta")

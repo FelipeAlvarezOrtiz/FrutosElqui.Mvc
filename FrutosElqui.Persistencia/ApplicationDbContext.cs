@@ -1,6 +1,7 @@
 ﻿using FrutosElqui.Core.Clientes;
 using FrutosElqui.Core.Cotizaciones;
 using FrutosElqui.Core.Misc;
+using FrutosElqui.Core.Ofertas;
 using FrutosElqui.Core.Productos;
 using FrutosElqui.Core.Proveedores;
 using FrutosElqui.Core.Usuarios;
@@ -48,5 +49,7 @@ namespace FrutosElqui.Persistencia
         public DbSet<DetalleInventarios> Inventarios { get; set; }
         public DbSet<IngresoDinero> IngresosDineros { get; set; }
         public DbSet<EgresoDinero> EgresosDineros { get; set; }
+        public DbSet<Oferta> Ofertas { get; set; }
+        public DbSet<DetalleOferta> DetallesDeOfertas { get; set; }
     }
 }
