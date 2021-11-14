@@ -72,6 +72,11 @@ namespace FrutosElqui.Escritorio
         {
             new EgresosDinero(Mediator).Show(this);
         }
+
+        private void VerOfertasClick(object sender, EventArgs e)
+        {
+            new CrearOferta(Mediator).Show(this);
+        }
     }
 
 }

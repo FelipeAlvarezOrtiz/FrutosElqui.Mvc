@@ -224,6 +224,7 @@ namespace FrutosElqui.Escritorio
             this.OfertasImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.OfertasImage.TabIndex = 0;
             this.OfertasImage.TabStop = false;
+            this.OfertasImage.Click += new System.EventHandler(this.VerOfertasClick);
             // 
             // OfertasLabel
             // 
@@ -850,7 +851,7 @@ namespace FrutosElqui.Escritorio
             this.SalirButton.Name = "SalirButton";
             this.SalirButton.Size = new System.Drawing.Size(312, 60);
             this.SalirButton.TabIndex = 1;
-            this.SalirButton.Text = "Salir";
+            this.SalirButton.Text = "Cerrar sesión";
             this.SalirButton.UseVisualStyleBackColor = false;
             this.SalirButton.Click += new System.EventHandler(this.SalirAppClick);
             // 

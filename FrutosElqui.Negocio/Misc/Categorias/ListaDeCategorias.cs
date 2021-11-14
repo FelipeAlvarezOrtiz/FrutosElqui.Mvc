@@ -10,7 +10,7 @@ namespace FrutosElqui.Negocio.Misc.Categorias
 {
     public class ListaDeCategorias
     {
-        public class Query : IRequest<List<Categoria>>{}
+        public class Query : IRequest<List<Categoria>> { }
 
         public class Handler : IRequestHandler<Query, List<Categoria>>
         {

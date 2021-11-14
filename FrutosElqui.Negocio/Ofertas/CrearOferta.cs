@@ -44,7 +44,7 @@ namespace FrutosElqui.Negocio.Ofertas
                     .FirstOrDefaultAsync(cancellationToken) is not null)
                     throw new Exception("El nombre de esa oferta ya está registrada en sistema");
 
-                var ListaDetalles = new List<DetalleOferta>(request.ProductosEnOferta.Count);
+                var listaDetalles = new List<DetalleOferta>(request.ProductosEnOferta.Count);
                 
                 foreach (var detalle in request.ProductosEnOferta)
                 {
@@ -57,7 +57,7 @@ namespace FrutosElqui.Negocio.Ofertas
                         CantidadProducto = detalle.Cantidad,
                         GuidDetalle = guidDetalleOferta
                     };
-                    ListaDetalles.Add(detalleOferta);
+                    listaDetalles.Add(detalleOferta);
                 }
 
                 var ofertaCabeceraGuid = Guid.NewGuid();
@@ -67,7 +67,7 @@ namespace FrutosElqui.Negocio.Ofertas
                     FechaCreacion = DateTime.Now,
                     NombreOferta = request.NombreOferta,
                     PrecioOferta = request.PrecioOferta,
-                    ProductosEnOferta = ListaDetalles
+                    ProductosEnOferta = listaDetalles
                 };
 
                 await _context.Ofertas.AddAsync(detalleCabecera,cancellationToken);

@@ -5,6 +5,7 @@ using FrutosElqui.Core.Ofertas;
 using FrutosElqui.Core.Productos;
 using FrutosElqui.Core.Proveedores;
 using FrutosElqui.Core.Usuarios;
+using FrutosElqui.Core.Ventas;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -51,5 +52,8 @@ namespace FrutosElqui.Persistencia
         public DbSet<EgresoDinero> EgresosDineros { get; set; }
         public DbSet<Oferta> Ofertas { get; set; }
         public DbSet<DetalleOferta> DetallesDeOfertas { get; set; }
+        public DbSet<Venta> Ventas { get; set; }
+        public DbSet<DetalleVenta> DetallesVentas { get; set; }
+        public DbSet<OfertasEnVenta> OfertasVentas { get; set; }
     }
 }

@@ -4,14 +4,16 @@ using FrutosElqui.Persistencia;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FrutosElqui.Persistencia.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211112010116_Ventas")]
+    partial class Ventas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -496,11 +498,6 @@ namespace FrutosElqui.Persistencia.Migrations
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdOferta")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
                     b.Property<string>("NombreOferta")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
@@ -665,8 +662,8 @@ namespace FrutosElqui.Persistencia.Migrations
                     b.Property<int>("CantidadOferta")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("GuidOferta")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("IdOferta")
+                        .HasColumnType("int");
 
                     b.Property<string>("NombreOferta")
                         .HasMaxLength(150)

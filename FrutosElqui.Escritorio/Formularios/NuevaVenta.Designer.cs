@@ -31,6 +31,10 @@ namespace FrutosElqui.Escritorio.Formularios
         {
             this.mainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.productoCanasta = new System.Windows.Forms.DataGridView();
+            this.CodeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cabeceraLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ConfiguracionVentaGroupBox = new System.Windows.Forms.GroupBox();
             this.configuracionVentaLayout = new System.Windows.Forms.TableLayoutPanel();
@@ -45,16 +49,16 @@ namespace FrutosElqui.Escritorio.Formularios
             this.ResetBuscador = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TotalVentaTextbox = new System.Windows.Forms.TextBox();
-            this.CodeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lowLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.GuadarButton = new System.Windows.Forms.Button();
+            this.SalirButton = new System.Windows.Forms.Button();
             this.mainLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoCanasta)).BeginInit();
             this.cabeceraLayout.SuspendLayout();
             this.ConfiguracionVentaGroupBox.SuspendLayout();
             this.configuracionVentaLayout.SuspendLayout();
             this.BotonesLayout.SuspendLayout();
+            this.lowLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainLayout
@@ -64,14 +68,16 @@ namespace FrutosElqui.Escritorio.Formularios
             this.mainLayout.Controls.Add(this.productoCanasta, 0, 1);
             this.mainLayout.Controls.Add(this.cabeceraLayout, 0, 0);
             this.mainLayout.Controls.Add(this.BotonesLayout, 0, 2);
+            this.mainLayout.Controls.Add(this.lowLayout, 0, 3);
             this.mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainLayout.Location = new System.Drawing.Point(0, 0);
             this.mainLayout.Name = "mainLayout";
-            this.mainLayout.RowCount = 4;
-            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.97911F));
-            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.38136F));
-            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.62346F));
-            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.mainLayout.RowCount = 5;
+            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.32552F));
+            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.02295F));
+            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.636456F));
+            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.01507F));
+            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.mainLayout.Size = new System.Drawing.Size(1549, 783);
             this.mainLayout.TabIndex = 0;
             // 
@@ -89,13 +95,45 @@ namespace FrutosElqui.Escritorio.Formularios
             this.Cantidad,
             this.Precio});
             this.productoCanasta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productoCanasta.Location = new System.Drawing.Point(3, 135);
+            this.productoCanasta.Location = new System.Drawing.Point(3, 112);
             this.productoCanasta.Name = "productoCanasta";
             this.productoCanasta.RowHeadersVisible = false;
             this.productoCanasta.RowHeadersWidth = 82;
             this.productoCanasta.RowTemplate.Height = 41;
-            this.productoCanasta.Size = new System.Drawing.Size(1543, 498);
+            this.productoCanasta.Size = new System.Drawing.Size(1543, 505);
             this.productoCanasta.TabIndex = 0;
+            // 
+            // CodeID
+            // 
+            this.CodeID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.CodeID.HeaderText = "Codigo de Barra";
+            this.CodeID.MinimumWidth = 200;
+            this.CodeID.Name = "CodeID";
+            this.CodeID.Width = 200;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NombreProducto.HeaderText = "Nombre de Producto";
+            this.NombreProducto.MinimumWidth = 560;
+            this.NombreProducto.Name = "NombreProducto";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 10;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 154;
+            // 
+            // Precio
+            // 
+            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MaxInputLength = 64000;
+            this.Precio.MinimumWidth = 10;
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 124;
             // 
             // cabeceraLayout
             // 
@@ -107,7 +145,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.cabeceraLayout.Name = "cabeceraLayout";
             this.cabeceraLayout.RowCount = 1;
             this.cabeceraLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.87533F));
-            this.cabeceraLayout.Size = new System.Drawing.Size(1543, 126);
+            this.cabeceraLayout.Size = new System.Drawing.Size(1543, 103);
             this.cabeceraLayout.TabIndex = 1;
             // 
             // ConfiguracionVentaGroupBox
@@ -116,7 +154,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.ConfiguracionVentaGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ConfiguracionVentaGroupBox.Location = new System.Drawing.Point(3, 3);
             this.ConfiguracionVentaGroupBox.Name = "ConfiguracionVentaGroupBox";
-            this.ConfiguracionVentaGroupBox.Size = new System.Drawing.Size(1537, 120);
+            this.ConfiguracionVentaGroupBox.Size = new System.Drawing.Size(1537, 97);
             this.ConfiguracionVentaGroupBox.TabIndex = 1;
             this.ConfiguracionVentaGroupBox.TabStop = false;
             this.ConfiguracionVentaGroupBox.Text = "Configuración de venta";
@@ -141,7 +179,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.configuracionVentaLayout.Name = "configuracionVentaLayout";
             this.configuracionVentaLayout.RowCount = 1;
             this.configuracionVentaLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.configuracionVentaLayout.Size = new System.Drawing.Size(1531, 82);
+            this.configuracionVentaLayout.Size = new System.Drawing.Size(1531, 59);
             this.configuracionVentaLayout.TabIndex = 0;
             // 
             // TipoPagoCombo
@@ -165,7 +203,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.TipoPagoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TipoPagoLabel.Location = new System.Drawing.Point(1023, 0);
             this.TipoPagoLabel.Name = "TipoPagoLabel";
-            this.TipoPagoLabel.Size = new System.Drawing.Size(249, 82);
+            this.TipoPagoLabel.Size = new System.Drawing.Size(249, 59);
             this.TipoPagoLabel.TabIndex = 4;
             this.TipoPagoLabel.Text = "Tipo de pago";
             this.TipoPagoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -176,7 +214,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.TipoVentaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TipoVentaLabel.Location = new System.Drawing.Point(513, 0);
             this.TipoVentaLabel.Name = "TipoVentaLabel";
-            this.TipoVentaLabel.Size = new System.Drawing.Size(249, 82);
+            this.TipoVentaLabel.Size = new System.Drawing.Size(249, 59);
             this.TipoVentaLabel.TabIndex = 2;
             this.TipoVentaLabel.Text = "Tipo de venta";
             this.TipoVentaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,7 +225,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.CodigoBarraLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CodigoBarraLabel.Location = new System.Drawing.Point(3, 0);
             this.CodigoBarraLabel.Name = "CodigoBarraLabel";
-            this.CodigoBarraLabel.Size = new System.Drawing.Size(249, 82);
+            this.CodigoBarraLabel.Size = new System.Drawing.Size(249, 59);
             this.CodigoBarraLabel.TabIndex = 0;
             this.CodigoBarraLabel.Text = "Código de barra";
             this.CodigoBarraLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -231,11 +269,11 @@ namespace FrutosElqui.Escritorio.Formularios
             this.BotonesLayout.Controls.Add(this.label1, 5, 0);
             this.BotonesLayout.Controls.Add(this.TotalVentaTextbox, 6, 0);
             this.BotonesLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BotonesLayout.Location = new System.Drawing.Point(3, 639);
+            this.BotonesLayout.Location = new System.Drawing.Point(3, 623);
             this.BotonesLayout.Name = "BotonesLayout";
             this.BotonesLayout.RowCount = 1;
             this.BotonesLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.BotonesLayout.Size = new System.Drawing.Size(1543, 61);
+            this.BotonesLayout.Size = new System.Drawing.Size(1543, 59);
             this.BotonesLayout.TabIndex = 2;
             // 
             // BorrarProductoButton
@@ -243,7 +281,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.BorrarProductoButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BorrarProductoButton.Location = new System.Drawing.Point(98, 3);
             this.BorrarProductoButton.Name = "BorrarProductoButton";
-            this.BorrarProductoButton.Size = new System.Drawing.Size(361, 55);
+            this.BorrarProductoButton.Size = new System.Drawing.Size(361, 53);
             this.BorrarProductoButton.TabIndex = 0;
             this.BorrarProductoButton.Text = "Borrar Producto";
             this.BorrarProductoButton.UseVisualStyleBackColor = true;
@@ -254,7 +292,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.ResetBuscador.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ResetBuscador.Location = new System.Drawing.Point(624, 3);
             this.ResetBuscador.Name = "ResetBuscador";
-            this.ResetBuscador.Size = new System.Drawing.Size(350, 55);
+            this.ResetBuscador.Size = new System.Drawing.Size(350, 53);
             this.ResetBuscador.TabIndex = 1;
             this.ResetBuscador.Text = "Reiniciar buscador";
             this.ResetBuscador.UseVisualStyleBackColor = true;
@@ -266,7 +304,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(1095, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 61);
+            this.label1.Size = new System.Drawing.Size(178, 59);
             this.label1.TabIndex = 2;
             this.label1.Text = "Total";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -280,37 +318,47 @@ namespace FrutosElqui.Escritorio.Formularios
             this.TotalVentaTextbox.TabIndex = 3;
             this.TotalVentaTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // CodeID
+            // lowLayout
             // 
-            this.CodeID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.CodeID.HeaderText = "Codigo de Barra";
-            this.CodeID.MinimumWidth = 200;
-            this.CodeID.Name = "CodeID";
-            this.CodeID.Width = 231;
+            this.lowLayout.ColumnCount = 6;
+            this.lowLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.lowLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.lowLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.lowLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.lowLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.lowLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.lowLayout.Controls.Add(this.GuadarButton, 4, 0);
+            this.lowLayout.Controls.Add(this.SalirButton, 1, 0);
+            this.lowLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lowLayout.Location = new System.Drawing.Point(3, 688);
+            this.lowLayout.Name = "lowLayout";
+            this.lowLayout.RowCount = 1;
+            this.lowLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.lowLayout.Size = new System.Drawing.Size(1543, 70);
+            this.lowLayout.TabIndex = 3;
             // 
-            // NombreProducto
+            // GuadarButton
             // 
-            this.NombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NombreProducto.HeaderText = "Nombre de Producto";
-            this.NombreProducto.MinimumWidth = 560;
-            this.NombreProducto.Name = "NombreProducto";
+            this.GuadarButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GuadarButton.Location = new System.Drawing.Point(1037, 9);
+            this.GuadarButton.Margin = new System.Windows.Forms.Padding(9);
+            this.GuadarButton.Name = "GuadarButton";
+            this.GuadarButton.Size = new System.Drawing.Size(239, 52);
+            this.GuadarButton.TabIndex = 0;
+            this.GuadarButton.Text = "Guardar venta";
+            this.GuadarButton.UseVisualStyleBackColor = true;
+            this.GuadarButton.Click += new System.EventHandler(this.GuardarVentaClick);
             // 
-            // Cantidad
+            // SalirButton
             // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 10;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 154;
-            // 
-            // Precio
-            // 
-            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MaxInputLength = 64000;
-            this.Precio.MinimumWidth = 10;
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 124;
+            this.SalirButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SalirButton.Location = new System.Drawing.Point(266, 9);
+            this.SalirButton.Margin = new System.Windows.Forms.Padding(9);
+            this.SalirButton.Name = "SalirButton";
+            this.SalirButton.Size = new System.Drawing.Size(239, 52);
+            this.SalirButton.TabIndex = 1;
+            this.SalirButton.Text = "Cerrar";
+            this.SalirButton.UseVisualStyleBackColor = true;
             // 
             // NuevaVenta
             // 
@@ -329,6 +377,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.configuracionVentaLayout.PerformLayout();
             this.BotonesLayout.ResumeLayout(false);
             this.BotonesLayout.PerformLayout();
+            this.lowLayout.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -355,5 +404,8 @@ namespace FrutosElqui.Escritorio.Formularios
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.TableLayoutPanel lowLayout;
+        private System.Windows.Forms.Button GuadarButton;
+        private System.Windows.Forms.Button SalirButton;
     }
 }

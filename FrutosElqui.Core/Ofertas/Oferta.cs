@@ -10,6 +10,8 @@ namespace FrutosElqui.Core.Ofertas
     {
         [Key]
         public Guid GuidOferta { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int IdOferta { get; set; }
         public DateTime FechaCreacion { get; set; }
         public List<DetalleOferta> ProductosEnOferta { get; set; }
         public int PrecioOferta { get; set; }
