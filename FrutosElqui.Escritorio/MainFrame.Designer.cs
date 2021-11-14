@@ -601,6 +601,7 @@ namespace FrutosElqui.Escritorio
             this.ReporteVentasImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ReporteVentasImage.TabIndex = 1;
             this.ReporteVentasImage.TabStop = false;
+            this.ReporteVentasImage.Click += new System.EventHandler(this.InformaVentasClick);
             // 
             // tableLayoutPanel17
             // 

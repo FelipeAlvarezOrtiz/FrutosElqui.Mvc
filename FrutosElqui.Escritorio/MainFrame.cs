@@ -77,6 +77,11 @@ namespace FrutosElqui.Escritorio
         {
             new CrearOferta(Mediator).Show(this);
         }
+
+        private void InformaVentasClick(object sender, EventArgs e)
+        {
+            new ListaVentas(Mediator).Show(this);
+        }
     }
 
 }
