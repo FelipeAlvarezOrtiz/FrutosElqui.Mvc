@@ -359,6 +359,7 @@ namespace FrutosElqui.Escritorio.Formularios
             this.SalirButton.TabIndex = 1;
             this.SalirButton.Text = "Cerrar";
             this.SalirButton.UseVisualStyleBackColor = true;
+            this.SalirButton.Click += new System.EventHandler(this.SalirButtonClcik);
             // 
             // NuevaVenta
             // 

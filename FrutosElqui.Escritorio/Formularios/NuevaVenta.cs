@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using FrutosElqui.Core.Ofertas;
 using FrutosElqui.Negocio.Misc.TipoPago;
 using FrutosElqui.Negocio.Ofertas;
 using FrutosElqui.Negocio.Productos;
@@ -284,5 +283,9 @@ namespace FrutosElqui.Escritorio.Formularios
             return total;
         }
 
+        private void SalirButtonClcik(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

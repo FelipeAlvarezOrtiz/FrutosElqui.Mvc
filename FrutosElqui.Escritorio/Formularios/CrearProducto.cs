@@ -63,7 +63,7 @@ namespace FrutosElqui.Escritorio.Formularios
             await CargarSabores();
         }
 
-        private async Task CargarProveedores()
+        public async Task CargarProveedores()
         {
             var proveedores = await _mediator.Send(new ListaProveedores.Query());
             ProveedoresCombo.DataSource = proveedores;
@@ -71,7 +71,7 @@ namespace FrutosElqui.Escritorio.Formularios
             ProveedoresCombo.ValueMember = "IdProveedor";
         }
 
-        private async Task CargarMedidas()
+        public async Task CargarMedidas()
         {
             var medidas = await _mediator.Send(new ListaMedidas.Query());
             MedidasCombo.DataSource = medidas;
@@ -79,7 +79,7 @@ namespace FrutosElqui.Escritorio.Formularios
             MedidasCombo.ValueMember = "IdMedida";
         }
 
-        private async Task CargarCategorias()
+        public async Task CargarCategorias()
         {
             var categorias = await _mediator.Send(new ListaCategorias.Query());
             CategoriasCombo.DataSource = categorias;
@@ -87,7 +87,7 @@ namespace FrutosElqui.Escritorio.Formularios
             CategoriasCombo.ValueMember = "IdCategoria";
         }
 
-        private async Task CargarSabores()
+        public async Task CargarSabores()
         {
             var sabores = await _mediator.Send(new ListaSabores.Query());
             SaborCombo.DataSource = sabores;
@@ -100,5 +100,19 @@ namespace FrutosElqui.Escritorio.Formularios
             this.Close();
         }
 
+        private void NuevoSaborClick(object sender, EventArgs e)
+        {
+            new CrearSabor(this._mediator,this).Show();
+        }
+
+        private void NuevaMedidaClick(object sender, EventArgs e)
+        {
+            new CrearMedida(this, _mediator).Show();
+        }
+
+        private void NuevaCategoriaClick(object sender, EventArgs e)
+        {
+            new CrearCategoria(this, _mediator).Show();
+        }
     }
 }
